@@ -8,7 +8,7 @@ int main(){
 	//Declerations (insert as needed)
 	int kSmall_pos;			//For User Input
 	int kSmall_val=0;		//Populate using your algorithm implementation
-	int pivot;		        //Pivot position in array
+	int pivot;		    	//Pivot position in array
 
 	//User Input DO NOT MODIFY
 	std::cout<<"Please enter required kth smallest value:";
@@ -31,12 +31,41 @@ int main(){
 	std::cout<<"kth smallest value = "<<kSmall_val<<std::endl;
 }
 
-int kSmall(int k, int [] array, int first, int last) {
+int kSmall(int k, int array [], int first, int last) {
+	int pivotIndex = partition;
 	if(k < pivotIndex - first + 1) {
-		return kSmall(k, array, first, pivotIndex-1)
+		return kSmall(k, array, first, pivotIndex-1);
 	}else if(k == pivotIndex - first + 1) {
 		return p;
 	}else {
-		return kSmall(k - (pivotIndex - first + 1), array, pivotIndex + 1, last)
+		return kSmall(k - (pivotIndex - first + 1), array, pivotIndex + 1, last);
 	}
+}
+
+void sortFirstMiddleLast(int array [], int first, int mid, int last) {
+	if(array[first] > array[mid]) {
+		int temp = array[mid];
+		array[mid] = array[first];
+		array[first] = temp;
+	}
+
+	if(array[mid] > array[last]) {
+		int temp = array[mid];
+		array[mid] = array[last];
+		array[last] = temp;
+	}
+
+	if(array[first] > array[mid]) {
+		int temp = array[mid];
+		array[mid] = array[first];
+		array[first] = temp;
+	}
+}
+
+int partition(int array [], int first, int last) {
+	int mid = first + (last - first) / 2;
+	sortFirstMiddleLast(array, first, mid, last);
+	int temp = array[mid];
+	array[mid] = array[last-1];
+	array[last-1] = temp;
 }
