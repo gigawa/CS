@@ -65,7 +65,41 @@ void sortFirstMiddleLast(int array [], int first, int mid, int last) {
 int partition(int array [], int first, int last) {
 	int mid = first + (last - first) / 2;
 	sortFirstMiddleLast(array, first, mid, last);
+	
 	int temp = array[mid];
 	array[mid] = array[last-1];
 	array[last-1] = temp;
+
+	int pivotIndex = last - 1;
+	pivot = array[pivotIndex];
+
+	int indexFromLeft = first + 1;
+	int indexFromRight = last - 2;
+
+	bool done = false;
+
+	while(!done) {
+		while(array[indexFromLeft] < pivot) {
+			indexFromLeft++;
+		}
+
+		while(array[indexFromRight] > pivot) {
+			indexFromRight--;
+		}
+
+		if(indexFromLeft < indexFromRight) {
+			temp = array[indexFromLeft];
+			array[indexFromLeft] = array[indexFromRight];
+			array[indexFromRight] = temp;
+			indexFromLeft++;
+			indexFromRight--;
+		}else {
+			done = true;
+		}
+	}
+	temp = array[pivotIndex];
+	array[pivotIndex] = arra[indexFromLeft];
+	array[indexFromLeft] = array[pivotIndex];
+
+	return pivotIndex;
 }
