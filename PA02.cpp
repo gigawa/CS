@@ -3,12 +3,19 @@
 #include <iostream>
 #include <fstream>
 
+int kSmall(int k, int array [], int first, int last, int & pivot);
+void sortFirstMiddleLast(int array [], int first, int mid, int last);
+int partition(int array [], int first, int last, int & pivot);
+
 int main(){
 
 	//Declerations (insert as needed)
 	int kSmall_pos;			//For User Input
 	int kSmall_val=0;		//Populate using your algorithm implementation
 	int pivot;		    	//Pivot position in array
+	int array [100];
+	int length = 0;
+	char * filename;
 
 	//User Input DO NOT MODIFY
 	std::cout<<"Please enter required kth smallest value:";
@@ -16,11 +23,20 @@ int main(){
 
 
 	//File Read code (insert) - This code should be able to parse the data in a text file similar to the provided one and store values in an array for processing.
+	std::ifstream fin;
+	fin.open("data2.txt");
+	
+	while(fin >> array[length]) {
+		length++;
+		//std::cout<<"Here" << std::endl;
+	}
 
-
+	for(int i = 0; i < length; i++) {
+		std::cout<< array[i] << std::endl;
+	}
 
 	//kmsall algorithm implementation or function call (insert) - implement using recursion as indicated
-
+	kSmall_val = kSmall(kSmall_pos, array, 0, length, pivot);
 
 
 	//Log file output (insert) - preferred in .txt format acoording to instructions posted on assignment page
@@ -31,14 +47,14 @@ int main(){
 	std::cout<<"kth smallest value = "<<kSmall_val<<std::endl;
 }
 
-int kSmall(int k, int array [], int first, int last) {
-	int pivotIndex = partition;
+int kSmall(int k, int array [], int first, int last, int & pivot) {
+	int pivotIndex = partition(array, first, last, pivot);
 	if(k < pivotIndex - first + 1) {
-		return kSmall(k, array, first, pivotIndex-1);
+		return kSmall(k, array, first, pivotIndex-1, pivot);
 	}else if(k == pivotIndex - first + 1) {
-		return p;
+		return pivot;
 	}else {
-		return kSmall(k - (pivotIndex - first + 1), array, pivotIndex + 1, last);
+		return kSmall(k - (pivotIndex - first + 1), array, pivotIndex + 1, last, pivot);
 	}
 }
 
@@ -62,7 +78,7 @@ void sortFirstMiddleLast(int array [], int first, int mid, int last) {
 	}
 }
 
-int partition(int array [], int first, int last) {
+int partition(int array [], int first, int last, int & pivot) {
 	int mid = first + (last - first) / 2;
 	sortFirstMiddleLast(array, first, mid, last);
 	
@@ -98,7 +114,7 @@ int partition(int array [], int first, int last) {
 		}
 	}
 	temp = array[pivotIndex];
-	array[pivotIndex] = arra[indexFromLeft];
+	array[pivotIndex] = array[indexFromLeft];
 	array[indexFromLeft] = array[pivotIndex];
 
 	return pivotIndex;
