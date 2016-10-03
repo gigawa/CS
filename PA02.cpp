@@ -7,6 +7,9 @@ int kSmall(int k, int array [], int first, int last, int & pivot);
 void sortFirstMiddleLast(int array [], int first, int mid, int last);
 int partition(int array [], int first, int last, int & pivot);
 
+int testLength;
+int count = 0;
+
 int main(){
 
 	//Declerations (insert as needed)
@@ -24,19 +27,22 @@ int main(){
 
 	//File Read code (insert) - This code should be able to parse the data in a text file similar to the provided one and store values in an array for processing.
 	std::ifstream fin;
-	fin.open("data2.txt");
+	fin.open("data.txt");
 	
 	while(fin >> array[length]) {
 		length++;
 		//std::cout<<"Here" << std::endl;
 	}
 
+	std::cout << "Length: " << length << std::endl << std::endl;
+
 	for(int i = 0; i < length; i++) {
 		std::cout<< array[i] << std::endl;
 	}
-
+	
+	testLength = length;
 	//kmsall algorithm implementation or function call (insert) - implement using recursion as indicated
-	kSmall_val = kSmall(kSmall_pos, array, 0, length, pivot);
+	kSmall_val = kSmall(kSmall_pos, array, 0, length-1, pivot);
 
 
 	//Log file output (insert) - preferred in .txt format acoording to instructions posted on assignment page
@@ -48,6 +54,14 @@ int main(){
 }
 
 int kSmall(int k, int array [], int first, int last, int & pivot) {
+	count++;
+	if(count < 10) {
+	std::cout << "kSmall" << std::endl;	
+	for(int i = 0; i < testLength; i++) {
+		std::cout<< array[i] << std::endl;
+	}
+	std::cout << std::endl <<std::endl;
+
 	int pivotIndex = partition(array, first, last, pivot);
 	if(k < pivotIndex - first + 1) {
 		return kSmall(k, array, first, pivotIndex-1, pivot);
@@ -56,9 +70,20 @@ int kSmall(int k, int array [], int first, int last, int & pivot) {
 	}else {
 		return kSmall(k - (pivotIndex - first + 1), array, pivotIndex + 1, last, pivot);
 	}
+	}else {
+		return 0;
+	}
 }
 
 void sortFirstMiddleLast(int array [], int first, int mid, int last) {
+	std::cout << "FirstMiddleLast" << std::endl;	
+	for(int i = 0; i < testLength; i++) {
+		std::cout<< array[i] << std::endl;
+	}
+	std::cout << std::endl <<std::endl;
+
+	std::cout << "First: " << first << " Middle: " << mid << " Last: " << last << std::endl << std::endl;
+	
 	if(array[first] > array[mid]) {
 		int temp = array[mid];
 		array[mid] = array[first];
@@ -76,6 +101,11 @@ void sortFirstMiddleLast(int array [], int first, int mid, int last) {
 		array[mid] = array[first];
 		array[first] = temp;
 	}
+	std::cout << "FirstMiddleLast2" << std::endl;	
+	for(int i = 0; i < testLength; i++) {
+		std::cout<< array[i] << std::endl;
+	}
+	std::cout << std::endl <<std::endl;
 }
 
 int partition(int array [], int first, int last, int & pivot) {
@@ -93,6 +123,12 @@ int partition(int array [], int first, int last, int & pivot) {
 	int indexFromRight = last - 2;
 
 	bool done = false;
+
+	std::cout << "partition" << std::endl;	
+	for(int i = 0; i < testLength; i++) {
+		std::cout<< array[i] << std::endl;
+	}
+	std::cout << std::endl <<std::endl;
 
 	while(!done) {
 		while(array[indexFromLeft] < pivot) {
@@ -113,9 +149,22 @@ int partition(int array [], int first, int last, int & pivot) {
 			done = true;
 		}
 	}
+
+	std::cout << "partition2" << std::endl;	
+	for(int i = 0; i < testLength; i++) {
+		std::cout<< array[i] << std::endl;
+	}
+	std::cout << std::endl <<std::endl;
+
 	temp = array[pivotIndex];
 	array[pivotIndex] = array[indexFromLeft];
-	array[indexFromLeft] = array[pivotIndex];
+	array[indexFromLeft] = temp;
+
+	std::cout << "partition3" << std::endl;	
+	for(int i = 0; i < testLength; i++) {
+		std::cout<< array[i] << std::endl;
+	}
+	std::cout << std::endl <<std::endl;
 
 	return pivotIndex;
 }
