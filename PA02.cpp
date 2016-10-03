@@ -1,21 +1,21 @@
-//  Created by Shehryar Khattak for CS302 Spring 2016 class.
+//  Created by Shehryar Khattak for CS302 Spring 2016 class.
 
 #include <iostream>
 #include <fstream>
 
-int kSmall(int k, int array [], int first, int last, int & pivot);
+//	function declarations
+int kSmall(int k, int array [], int first, int last, int & pivot, int length);
 void sortFirstMiddleLast(int array [], int first, int mid, int last);
 int partition(int array [], int first, int last, int & pivot);
 
-int main(){
+int main(int argc, char * argv[]){
 
 	//Declerations (insert as needed)
 	int kSmall_pos;			//For User Input
 	int kSmall_val=0;		//Populate using your algorithm implementation
-	int pivot;		    	//Pivot position in array
-	int array [100];
-	int length = 0;
-	char * filename;
+	int pivot = 0;		    //Pivot position in array
+	int * temp = new int[150];	//temporary array to hold initial read
+	int length = 0;				//length of the array
 
 	//User Input DO NOT MODIFY
 	std::cout<<"Please enter required kth smallest value:";
@@ -24,53 +24,82 @@ int main(){
 
 	//File Read code (insert) - This code should be able to parse the data in a text file similar to the provided one and store values in an array for processing.
 	std::ifstream fin;
-	fin.open("data2.txt");
+	fin.open(argv[1]);
 	
-	while(fin >> array[length]) {
+	//reads in file to temporary array
+	while(fin >> temp[length]) {
 		length++;
-		//std::cout<<"Here" << std::endl;
 	}
 
+	//copies temporary array into correctly sized array and deallocates the temporary array
+	int * array = new int[length];
 	for(int i = 0; i < length; i++) {
-		std::cout<< array[i] << std::endl;
+		array[i] = temp[i];
 	}
+	delete[] temp;
+	temp = NULL;
 
+	//begins the log file
+	std::ofstream fout;
+	fout.open("log.txt");
+
+	fin.close();
+	
 	//kmsall algorithm implementation or function call (insert) - implement using recursion as indicated
-	kSmall_val = kSmall(kSmall_pos, array, 0, length, pivot);
+	kSmall_val = kSmall(kSmall_pos, array, 0, length-1, pivot, length);
 
 
 	//Log file output (insert) - preferred in .txt format acoording to instructions posted on assignment page
-
+	fout.close();
 
 
 	//Output DO NOT MODIFY
 	std::cout<<"kth smallest value = "<<kSmall_val<<std::endl;
 }
 
-int kSmall(int k, int array [], int first, int last, int & pivot) {
+//recursively searches for kth smallest value
+int kSmall(int k, int array [], int first, int last, int & pivot, int length) {
+	//finds the pivot index of the array along with the pivot value
 	int pivotIndex = partition(array, first, last, pivot);
+
+	//appends to the log file
+	std::ofstream fout;
+	fout.open("log.txt", std::ofstream::out | std::ofstream::app);
+	fout << "PivotIndex: " << pivotIndex << std::endl << "Pivot: " << pivot << std::endl;
+	for(int i = 0; i < length; i++) {
+		fout<< array[i] << std::endl;
+	}
+	fout << std::endl <<std::endl;
+
+	//begins narrowing down to the kth smallest value
 	if(k < pivotIndex - first + 1) {
-		return kSmall(k, array, first, pivotIndex-1, pivot);
+		return kSmall(k, array, first, pivotIndex-1, pivot, length);
 	}else if(k == pivotIndex - first + 1) {
 		return pivot;
 	}else {
-		return kSmall(k - (pivotIndex - first + 1), array, pivotIndex + 1, last, pivot);
+		return kSmall(k - (pivotIndex - first + 1), array, pivotIndex + 1, last, pivot, length);
 	}
+	fout.close();
 }
 
+//sorts the first middle and last values of the array
 void sortFirstMiddleLast(int array [], int first, int mid, int last) {
+	
+	//switches first and mid if first is bigger
 	if(array[first] > array[mid]) {
 		int temp = array[mid];
 		array[mid] = array[first];
 		array[first] = temp;
 	}
 
+	//switches mid and last if mid is bigger
 	if(array[mid] > array[last]) {
 		int temp = array[mid];
 		array[mid] = array[last];
 		array[last] = temp;
 	}
 
+	//switches first and mid if first is bigger
 	if(array[first] > array[mid]) {
 		int temp = array[mid];
 		array[mid] = array[first];
@@ -78,22 +107,29 @@ void sortFirstMiddleLast(int array [], int first, int mid, int last) {
 	}
 }
 
+//partitions array into two sections to search
 int partition(int array [], int first, int last, int & pivot) {
+	//finds the middle of the section of the array we are using
 	int mid = first + (last - first) / 2;
-	sortFirstMiddleLast(array, first, mid, last);
-	
-	int temp = array[mid];
-	array[mid] = array[last-1];
-	array[last-1] = temp;
 
-	int pivotIndex = last - 1;
+	//begins sorting first, middle, and last values of the section of the array we are using
+	//sortFirstMiddleLast(array, first, mid, last);
+	
+	//switches values at middle and end-1 of section in use
+	int temp = array[mid];
+	array[mid] = array[last];
+	array[last] = temp;
+
+	//selects starting pivot index and pivot value
+	int pivotIndex = last;
 	pivot = array[pivotIndex];
 
+	//begins narrowing down area in use
 	int indexFromLeft = first + 1;
 	int indexFromRight = last - 2;
 
+	//partitions array by closing in on pivot and switching when needed
 	bool done = false;
-
 	while(!done) {
 		while(array[indexFromLeft] < pivot) {
 			indexFromLeft++;
@@ -113,9 +149,12 @@ int partition(int array [], int first, int last, int & pivot) {
 			done = true;
 		}
 	}
+
+	//switches pivot index and index from left
 	temp = array[pivotIndex];
 	array[pivotIndex] = array[indexFromLeft];
-	array[indexFromLeft] = array[pivotIndex];
+	array[indexFromLeft] = temp;
+	pivot = array[pivotIndex];
 
 	return pivotIndex;
 }
