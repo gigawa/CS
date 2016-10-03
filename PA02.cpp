@@ -113,7 +113,7 @@ int partition(int array [], int first, int last, int & pivot) {
 	int mid = first + (last - first) / 2;
 
 	//begins sorting first, middle, and last values of the section of the array we are using
-	//sortFirstMiddleLast(array, first, mid, last);
+	sortFirstMiddleLast(array, first, mid, last);
 	
 	//switches values at middle and end-1 of section in use
 	int temp = array[mid];
