@@ -3,7 +3,7 @@
 #include <iostream>
 #include <fstream>
 
-//	function declarations
+//function declarations
 int kSmall(int k, int array [], int first, int last, int & pivot, int length);
 void sortFirstMiddleLast(int array [], int first, int mid, int last);
 int partition(int array [], int first, int last, int & pivot);
@@ -13,9 +13,9 @@ int main(int argc, char * argv[]){
 	//Declerations (insert as needed)
 	int kSmall_pos;			//For User Input
 	int kSmall_val=0;		//Populate using your algorithm implementation
-	int pivot = 0;		    //Pivot position in array
+	int pivot = 0;		    	//Pivot position in array
 	int * temp = new int[150];	//temporary array to hold initial read
-	int length = 0;				//length of the array
+	int length = 0;			//length of the array
 
 	//User Input DO NOT MODIFY
 	std::cout<<"Please enter required kth smallest value:";
