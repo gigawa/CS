@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <exception>
 
 //function declarations
 int kSmall(int k, int array [], int first, int last, int & pivot, int length);
@@ -24,7 +25,14 @@ int main(int argc, char * argv[]){
 
 	//File Read code (insert) - This code should be able to parse the data in a text file similar to the provided one and store values in an array for processing.
 	std::ifstream fin;
-	fin.open(argv[1]);
+	if(argv[1] == NULL) {
+		std::cout << "Please enter a valid file name: ";
+		char * fileName = new char[100];
+		std::cin >> fileName;
+		fin.open(fileName);
+	}else {
+		fin.open(argv[1]);
+	}
 	
 	//reads in file to temporary array
 	while(fin >> temp[length]) {
@@ -84,7 +92,7 @@ int kSmall(int k, int array [], int first, int last, int & pivot, int length) {
 
 //sorts the first middle and last values of the array
 void sortFirstMiddleLast(int array [], int first, int mid, int last) {
-	
+
 	//switches first and mid if first is bigger
 	if(array[first] > array[mid]) {
 		int temp = array[mid];
@@ -117,12 +125,15 @@ int partition(int array [], int first, int last, int & pivot) {
 	
 	//switches values at middle and end-1 of section in use
 	int temp = array[mid];
-	array[mid] = array[last];
-	array[last] = temp;
+	array[mid] = array[last-1];
+	array[last-1] = temp;
 
 	//selects starting pivot index and pivot value
-	int pivotIndex = last;
+	int pivotIndex = last-1;
 	pivot = array[pivotIndex];
+	if(pivot > 100) {
+		throw std::exception();
+	}
 
 	//begins narrowing down area in use
 	int indexFromLeft = first + 1;
