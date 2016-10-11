@@ -1,0 +1,94 @@
+//  Created by Frank M. Carrano and Timothy M. Henry.
+//  Copyright (c) 2017 Pearson Education, Hoboken, New Jersey.
+
+/** ADT list: Link-based implementation.
+    Listing 9-2.
+    @file LinkedList.h
+	@brief Header file for a linked list
+	@details establishes functions for list
+	@Note Created by Frank M. Carrano and Timothy M. Henry.
+	Copyright (c) 2017 Pearson Education, Hoboken, New Jersey.
+*/
+
+#ifndef LINKED_LIST_
+#define LINKED_LIST_
+
+#include "Node.h"
+#include "PrecondViolatedExcept.h"
+
+template<class ItemType>
+class LinkedList
+{
+private:
+   Node<ItemType>* headPtr; // Pointer to first node in the chain;
+                            // (contains the first entry in the list)
+   int itemCount;           // Current count of list items 
+   
+   // Locates a specified node in this linked list.
+   // @pre  position is the number of the desired node;
+   //       position >= 1 and position <= itemCount.
+   // @post  The node is found and a pointer to it is returned.
+   // @param position  The number of the node to locate.
+   // @return  A pointer to the node at the given position.
+   Node<ItemType>* getNodeAt(int position) const;
+
+public:
+   /** default constructor*/
+   LinkedList();
+
+	/** copy constructor*/	
+   LinkedList(const LinkedList<ItemType>& aList);
+
+	/** destructor*/
+   virtual ~LinkedList();
+
+	/** checks if the list contains any items
+	@return returns true if the list is empty.*/
+   bool isEmpty() const;
+
+	/**checks how many items are in the list
+	@return the integer value of how many items are contained in the list.*/
+   int getLength() const;
+
+	/** inserts an entry into the list at a given position
+	@pre None.
+	@post if the position is valid and insertion is possible a new entry is entered into the list.
+	@param newPosition the position in the list at which to insert the new entry.
+	@param newEntry the new item to be placed in the list.
+	@return True if the item was successfully placed in the list.*/
+   bool insert(int newPosition, const ItemType& newEntry);
+
+	/** removes the entry at the specified position.
+	@pre None.
+	@post if the position is valid the item is removed from the list and the list is renumbered.
+	@param position the position in the list which contains the item to be removed.
+	@return True if the item was removed succesfully otherwise returns false.*/
+   bool remove(int position);
+
+	/** removes all items from the list.
+	@pre None.
+	@post List contains no entries.*/
+   void clear();
+   
+   /** Gets the entry at the given position in this list.
+    @pre  1 <= position <= getLength().
+    @post  The desired entry has been returned.
+    @param position  The list position of the desired entry.
+    @return  The entry at the given position.
+	@throw PrecondViolatedExcept if position < 1 or
+                                       position > getLength(). */
+   ItemType getEntry(int position) const throw(PrecondViolatedExcept);
+
+   /** Replaces the entry at the given position in this list.
+    @pre  1 <= position <= getLength().
+    @post  The entry at the given position is newEntry.
+    @param position  The list position of the entry to replace.
+    @param newEntry  The replacement entry.
+	@throw PrecondViolatedExcept if position < 1 or
+                                       position > getLength(). */
+   void replace(int position, const ItemType& newEntry)
+                              throw(PrecondViolatedExcept);
+}; // end LinkedList
+
+#include "LinkedList.cpp"
+#endif 
