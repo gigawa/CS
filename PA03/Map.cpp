@@ -12,7 +12,7 @@
     to destinationCity; otherwise returns false. */
 bool Map::isPath(City originCity, City destinationCity)
 {
-   Stack cityStack;
+   LinkedStack cityStack;
    
    unvisitAll(); // Clear marks on all cities
    
