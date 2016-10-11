@@ -1,0 +1,238 @@
+\hypertarget{class_linked_list}{\subsection{Linked\-List$<$ Item\-Type $>$ Class Template Reference}
+\label{class_linked_list}\index{Linked\-List$<$ Item\-Type $>$@{Linked\-List$<$ Item\-Type $>$}}
+}
+Inheritance diagram for Linked\-List$<$ Item\-Type $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_linked_list}
+\end{center}
+\end{figure}
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_linked_list_adf8d8164e06b6d358a36df7e53e814ee}{Linked\-List} ()
+\item 
+\hyperlink{class_linked_list_a6f1443c6120352f1f5b6bd3c0d95e41e}{Linked\-List} (const \hyperlink{class_linked_list}{Linked\-List}$<$ Item\-Type $>$ \&a\-List)
+\item 
+virtual \hyperlink{class_linked_list_a66aee17d756fe0e002375897383c180b}{$\sim$\-Linked\-List} ()
+\item 
+bool \hyperlink{class_linked_list_adb17aed0ceacbbe1f247d235f491f0d5}{is\-Empty} () const 
+\item 
+int \hyperlink{class_linked_list_adae55d6b79235c816cb9e05027fd2e7a}{get\-Length} () const 
+\item 
+bool \hyperlink{class_linked_list_ae8a19375505e87e2e4fc0e9b5afe4d4d}{insert} (int new\-Position, const Item\-Type \&new\-Entry)
+\item 
+bool \hyperlink{class_linked_list_a16a02716b5b2efb6fb1e3d18721b53e4}{remove} (int position)
+\item 
+void \hyperlink{class_linked_list_a7d1d9cf83eef67b6c4d700a3cc5970e1}{clear} ()
+\item 
+Item\-Type \hyperlink{class_linked_list_a79f005e696c19f6ccf90d9d535afa999}{get\-Entry} (int position) const   throw (\-Precond\-Violated\-Except)
+\item 
+void \hyperlink{class_linked_list_a3035f880c50e7d8f68e67c093d4607ca}{replace} (int position, const Item\-Type \&new\-Entry)  throw (\-Precond\-Violated\-Except)
+\end{DoxyCompactItemize}
+\subsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_linked_list_aa6c640ac15f70a1e08ba92dc060e4a0e}{\hyperlink{class_node}{Node}$<$ Item\-Type $>$ $\ast$ {\bfseries get\-Node\-At} (int position) const }\label{class_linked_list_aa6c640ac15f70a1e08ba92dc060e4a0e}
+
+\end{DoxyCompactItemize}
+\subsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_linked_list_ae59caadbc6814867c20aa78f1bc9a566}{\hyperlink{class_node}{Node}$<$ Item\-Type $>$ $\ast$ {\bfseries head\-Ptr}}\label{class_linked_list_ae59caadbc6814867c20aa78f1bc9a566}
+
+\item 
+\hypertarget{class_linked_list_a964b92cf1253774e9e35f331d5fb3490}{int {\bfseries item\-Count}}\label{class_linked_list_a964b92cf1253774e9e35f331d5fb3490}
+
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Constructor \& Destructor Documentation}
+\hypertarget{class_linked_list_adf8d8164e06b6d358a36df7e53e814ee}{\index{Linked\-List@{Linked\-List}!Linked\-List@{Linked\-List}}
+\index{Linked\-List@{Linked\-List}!LinkedList@{Linked\-List}}
+\paragraph[{Linked\-List}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\-Type $>$ {\bf Linked\-List}$<$ Item\-Type $>$\-::{\bf Linked\-List} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_linked_list_adf8d8164e06b6d358a36df7e53e814ee}
+default constructor \hypertarget{class_linked_list_a6f1443c6120352f1f5b6bd3c0d95e41e}{\index{Linked\-List@{Linked\-List}!Linked\-List@{Linked\-List}}
+\index{Linked\-List@{Linked\-List}!LinkedList@{Linked\-List}}
+\paragraph[{Linked\-List}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\-Type $>$ {\bf Linked\-List}$<$ Item\-Type $>$\-::{\bf Linked\-List} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Linked\-List}$<$ Item\-Type $>$ \&}]{a\-List}
+\end{DoxyParamCaption}
+)}}\label{class_linked_list_a6f1443c6120352f1f5b6bd3c0d95e41e}
+copy constructor \hypertarget{class_linked_list_a66aee17d756fe0e002375897383c180b}{\index{Linked\-List@{Linked\-List}!$\sim$\-Linked\-List@{$\sim$\-Linked\-List}}
+\index{$\sim$\-Linked\-List@{$\sim$\-Linked\-List}!LinkedList@{Linked\-List}}
+\paragraph[{$\sim$\-Linked\-List}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\-Type $>$ {\bf Linked\-List}$<$ Item\-Type $>$\-::$\sim${\bf Linked\-List} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_linked_list_a66aee17d756fe0e002375897383c180b}
+destructor 
+
+\subsubsection{Member Function Documentation}
+\hypertarget{class_linked_list_a7d1d9cf83eef67b6c4d700a3cc5970e1}{\index{Linked\-List@{Linked\-List}!clear@{clear}}
+\index{clear@{clear}!LinkedList@{Linked\-List}}
+\paragraph[{clear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\-Type $>$ void {\bf Linked\-List}$<$ Item\-Type $>$\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_linked_list_a7d1d9cf83eef67b6c4d700a3cc5970e1}
+removes all items from the list. \begin{DoxyPrecond}{Precondition}
+None. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+List contains no entries. 
+\end{DoxyPostcond}
+
+
+Implements \hyperlink{class_list_interface_adfda414908b645bdf19bcab8269168b7}{List\-Interface$<$ Item\-Type $>$}.
+
+\hypertarget{class_linked_list_a79f005e696c19f6ccf90d9d535afa999}{\index{Linked\-List@{Linked\-List}!get\-Entry@{get\-Entry}}
+\index{get\-Entry@{get\-Entry}!LinkedList@{Linked\-List}}
+\paragraph[{get\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\-Type $>$ Item\-Type {\bf Linked\-List}$<$ Item\-Type $>$\-::get\-Entry (
+\begin{DoxyParamCaption}
+\item[{int}]{position}
+\end{DoxyParamCaption}
+) const throw  {\bf Precond\-Violated\-Except}) \hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_linked_list_a79f005e696c19f6ccf90d9d535afa999}
+Gets the entry at the given position in this list. \begin{DoxyPrecond}{Precondition}
+1 $<$= position $<$= \hyperlink{class_linked_list_adae55d6b79235c816cb9e05027fd2e7a}{get\-Length()}. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The desired entry has been returned. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The list position of the desired entry. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The entry at the given position. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_precond_violated_except}{Precond\-Violated\-Except}} & if position $<$ 1 or position $>$ \hyperlink{class_linked_list_adae55d6b79235c816cb9e05027fd2e7a}{get\-Length()}. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{class_list_interface_a86987f69e5056d287212ede41db1956a}{List\-Interface$<$ Item\-Type $>$}.
+
+\hypertarget{class_linked_list_adae55d6b79235c816cb9e05027fd2e7a}{\index{Linked\-List@{Linked\-List}!get\-Length@{get\-Length}}
+\index{get\-Length@{get\-Length}!LinkedList@{Linked\-List}}
+\paragraph[{get\-Length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\-Type $>$ int {\bf Linked\-List}$<$ Item\-Type $>$\-::get\-Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_linked_list_adae55d6b79235c816cb9e05027fd2e7a}
+checks how many items are in the list \begin{DoxyReturn}{Returns}
+the integer value of how many items are contained in the list. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_list_interface_afc85695d4137f1e29ff02e179c9f3221}{List\-Interface$<$ Item\-Type $>$}.
+
+\hypertarget{class_linked_list_ae8a19375505e87e2e4fc0e9b5afe4d4d}{\index{Linked\-List@{Linked\-List}!insert@{insert}}
+\index{insert@{insert}!LinkedList@{Linked\-List}}
+\paragraph[{insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\-Type $>$ bool {\bf Linked\-List}$<$ Item\-Type $>$\-::insert (
+\begin{DoxyParamCaption}
+\item[{int}]{new\-Position, }
+\item[{const Item\-Type \&}]{new\-Entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_linked_list_ae8a19375505e87e2e4fc0e9b5afe4d4d}
+inserts an entry into the list at a given position \begin{DoxyPrecond}{Precondition}
+None. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+if the position is valid and insertion is possible a new entry is entered into the list. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em new\-Position} & the position in the list at which to insert the new entry. \\
+\hline
+{\em new\-Entry} & the new item to be placed in the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the item was successfully placed in the list. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_list_interface_a5b2f86954a86172699a3495982c38e77}{List\-Interface$<$ Item\-Type $>$}.
+
+\hypertarget{class_linked_list_adb17aed0ceacbbe1f247d235f491f0d5}{\index{Linked\-List@{Linked\-List}!is\-Empty@{is\-Empty}}
+\index{is\-Empty@{is\-Empty}!LinkedList@{Linked\-List}}
+\paragraph[{is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\-Type $>$ bool {\bf Linked\-List}$<$ Item\-Type $>$\-::is\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_linked_list_adb17aed0ceacbbe1f247d235f491f0d5}
+checks if the list contains any items \begin{DoxyReturn}{Returns}
+returns true if the list is empty. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_list_interface_a924f91e7f81d7dcd3fda79bbcc671394}{List\-Interface$<$ Item\-Type $>$}.
+
+\hypertarget{class_linked_list_a16a02716b5b2efb6fb1e3d18721b53e4}{\index{Linked\-List@{Linked\-List}!remove@{remove}}
+\index{remove@{remove}!LinkedList@{Linked\-List}}
+\paragraph[{remove}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\-Type $>$ bool {\bf Linked\-List}$<$ Item\-Type $>$\-::remove (
+\begin{DoxyParamCaption}
+\item[{int}]{position}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_linked_list_a16a02716b5b2efb6fb1e3d18721b53e4}
+removes the entry at the specified position. \begin{DoxyPrecond}{Precondition}
+None. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+if the position is valid the item is removed from the list and the list is renumbered. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em position} & the position in the list which contains the item to be removed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the item was removed succesfully otherwise returns false. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_list_interface_a5543002ec0d64bd2a63f3732f437af65}{List\-Interface$<$ Item\-Type $>$}.
+
+\hypertarget{class_linked_list_a3035f880c50e7d8f68e67c093d4607ca}{\index{Linked\-List@{Linked\-List}!replace@{replace}}
+\index{replace@{replace}!LinkedList@{Linked\-List}}
+\paragraph[{replace}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\-Type $>$ void {\bf Linked\-List}$<$ Item\-Type $>$\-::replace (
+\begin{DoxyParamCaption}
+\item[{int}]{position, }
+\item[{const Item\-Type \&}]{new\-Entry}
+\end{DoxyParamCaption}
+) throw  {\bf Precond\-Violated\-Except}) \hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_linked_list_a3035f880c50e7d8f68e67c093d4607ca}
+Replaces the entry at the given position in this list. \begin{DoxyPrecond}{Precondition}
+1 $<$= position $<$= \hyperlink{class_linked_list_adae55d6b79235c816cb9e05027fd2e7a}{get\-Length()}. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The entry at the given position is new\-Entry. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The list position of the entry to replace. \\
+\hline
+{\em new\-Entry} & The replacement entry. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_precond_violated_except}{Precond\-Violated\-Except}} & if position $<$ 1 or position $>$ \hyperlink{class_linked_list_adae55d6b79235c816cb9e05027fd2e7a}{get\-Length()}. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{class_list_interface_aae877a56b7b9f5f526c37a00e234fad1}{List\-Interface$<$ Item\-Type $>$}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_linked_list_8h}{Linked\-List.\-h}\item 
+\hyperlink{_linked_list_8cpp}{Linked\-List.\-cpp}\end{DoxyCompactItemize}
