@@ -3,11 +3,6 @@
 
 using namespace std;
 
-Node::Node(char c, Node * n) {
-	data = c;
-	next = n;
-}
-
 Stack::Stack(int m) {
 	top = NULL;
 }

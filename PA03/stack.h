@@ -2,17 +2,6 @@
 
 using namespace std;
 
-class Stack;
-
-class Node{
-	private:
-		Node(char, Node*);
-		char data;
-		Node* next;
-		friend class Stack;
-              	friend ostream& operator<<(ostream&, const Stack&);
-};
-
 class Stack{
         public:
                 Stack(int = 0);
