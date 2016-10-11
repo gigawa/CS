@@ -3,11 +3,13 @@
 
 using namespace std;
 
-Stack::Stack(int m) {
+template<class ItemType>
+Stack<ItemType>::Stack(int m) {
 	top = NULL;
 }
 
-Stack::Stack(const Stack & stack) {
+template<class ItemType>
+Stack<ItemType>::Stack(const Stack<ItemType> & stack) {
 	top = NULL;
 	Node * ptr = stack.top;
 	Node * temp = new Node(ptr->data, NULL);
@@ -22,7 +24,8 @@ Stack::Stack(const Stack & stack) {
 	}
 }
 
-Stack::~Stack() {
+template<class ItemType>
+Stack<ItemType>::~Stack() {
 	//deletes nodes until empty
 	while(!empty()) {
 		Node * nodeptr = top;
@@ -35,7 +38,8 @@ Stack::~Stack() {
 	top = NULL;
 }
 
-Stack & Stack::operator=(const Stack & stack) {
+template<class ItemType>
+Stack<ItemType> & Stack::operator=(const Stack<ItemType> & stack) {
 	//checks if assigning this stack
 	if(this != &stack)
 	{
@@ -55,7 +59,8 @@ Stack & Stack::operator=(const Stack & stack) {
 	return *this;
 }
 
-bool Stack::clear() {
+template<class ItemType>
+bool Stack<ItemType>::clear() {
 	//deletes nodes
 	while(!empty()) {
 		Node * nodeptr = top;
@@ -70,7 +75,8 @@ bool Stack::clear() {
 	return true;
 }
 
-bool Stack::push(char c) {
+template<class ItemType>
+bool Stack<ItemType>::push(ItemType c) {
 	//makes sure stack is not full
 	if(!full()) {	
 		Node * nodeptr = new Node(c,top);
@@ -87,7 +93,8 @@ bool Stack::push(char c) {
 	}
 }
 
-bool Stack::pop(char & c) {
+template<class ItemType>
+bool Stack<ItemType>::pop(ItemType & c) {
 	//checks if empty
 	if(!empty()) {
 		c = top->data;
@@ -104,7 +111,8 @@ bool Stack::pop(char & c) {
 	}
 }
 
-bool Stack::empty() const{
+template<class ItemType>
+bool Stack<ItemType>::empty() const{
 	//checks if empty
 	if(top == NULL) {
 		return true;
@@ -113,12 +121,14 @@ bool Stack::empty() const{
 	}
 }
 
-bool Stack::full() const{
+template<class ItemType>
+bool Stack<ItemType>::full() const{
 	//never full in scope of this class
 	return false;
 }
 
-ostream & operator<<(ostream & os, const Stack & stack) {
+template<class ItemType>
+ostream & operator<<(ostream & os, const Stack<ItemType> & stack) {
 	Node * ptr = stack.top;
 
 	//prints stack
@@ -130,7 +140,8 @@ ostream & operator<<(ostream & os, const Stack & stack) {
 	return os;
 }
 
-bool Stack::operator==(const Stack & stack) const{
+template<class ItemType>
+bool Stack<ItemType>::operator==(const Stack<ItemType> & stack) const{
 	bool same = true;
 	
 	Node * stackptr = stack.top;
