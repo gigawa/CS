@@ -1,6 +1,11 @@
 //  Created by Frank M. Carrano and Timothy M. Henry.
 //  Copyright (c) 2017 Pearson Education, Hoboken, New Jersey.
 
+#include "Map.h"
+#include "City.h"
+
+using namespace std;
+
 /** Tests whether a sequence of flights exists between two cities.
     Nonrecursive stack version.
  @pre  originCity and destinationCity both exist in the flight map.
@@ -12,7 +17,7 @@
     to destinationCity; otherwise returns false. */
 bool Map::isPath(City originCity, City destinationCity)
 {
-   LinkedStack cityStack;
+   LinkedStack<City> cityStack;
    
    unvisitAll(); // Clear marks on all cities
    
@@ -55,5 +60,3 @@ void Map::markVisited(City aCity) {
 City Map::getNextCity(City fromCity) {
 
 }
-
-

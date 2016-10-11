@@ -2,6 +2,8 @@
 #define MAP_
 
 #include "LinkedStack.h"
+#include "Node.h"
+#include "City.h"
 
 class Map {
 public:
@@ -11,4 +13,11 @@ public:
 	void unvisitAll();
 	void markVisited(City );
 	City getNextCity(City );
+private:
+	Node<City> * connectedCities;
+	City * cities;
+	City NO_CITY;
 };
+
+#include "Map.cpp"
+#endif

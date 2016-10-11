@@ -6,6 +6,7 @@
 
 #include <cassert>        // For assert
 #include "LinkedStack.h"  // Header file
+#include<iostream>
 
 template<class ItemType>
 LinkedStack<ItemType>::LinkedStack() : topPtr(nullptr)
