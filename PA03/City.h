@@ -11,7 +11,9 @@ public:
 	bool operator=(const City & city);
 	bool operator==(const City & rightCity) const;
 	bool operator!=(const City & rightCity) const;
+	City * connectedCity;
 private:
+	
 };
 
 #include "City.cpp"

@@ -11,10 +11,10 @@ public:
 	~Map();
 	bool isPath(City , City );
 	void unvisitAll();
-	void markVisited(City );
+	void markVisited(City &);
 	City getNextCity(City );
 private:
-	Node<City> * connectedCities;
+	int numCities;
 	City * cities;
 	City NO_CITY;
 };

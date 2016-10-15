@@ -50,13 +50,19 @@ bool Map::isPath(City originCity, City destinationCity)
 }  // end isPath
 
 void Map::unvisitAll() {
-
+	for(int i = 0; i < numCities; i++) {
+		cities[i].visited = false;
+	}
 }
 
-void Map::markVisited(City aCity) {
-
+void Map::markVisited(City & aCity) {
+	aCity.visited = true;  
 }
 
 City Map::getNextCity(City fromCity) {
-
+	if(fromCity.connectedCity->visited == false) {
+		return (*fromCity.connectedCity);
+	}else {
+		return NO_CITY;
+	}
 }
