@@ -8,6 +8,7 @@
 class Map {
 public:
 	Map();
+	Map(const City * serve, const City * origin, City * target, int length);
 	~Map();
 	bool isPath(City , City );
 	void unvisitAll();
@@ -15,7 +16,10 @@ public:
 	City getNextCity(City );
 private:
 	int numCities;
+	City * serviceCities;
 	City * cities;
+	City * originCities;
+	City * targetCities;
 	City NO_CITY;
 };
 

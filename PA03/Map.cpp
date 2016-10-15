@@ -6,6 +6,22 @@
 
 using namespace std;
 
+Map::Map() {
+
+}
+
+Map::Map(const City * theCities, const City * origin, const City * target, int length) {
+	numCities = length;
+	cities = new City[length];
+	for(int i = 0; i < numCities; i++) {
+		cities[i] = theCities[i];
+	}
+}
+
+Map::~Map() {
+	delete[] cities;
+}
+
 /** Tests whether a sequence of flights exists between two cities.
     Nonrecursive stack version.
  @pre  originCity and destinationCity both exist in the flight map.
