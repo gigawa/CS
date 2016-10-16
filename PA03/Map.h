@@ -13,10 +13,12 @@ public:
 	Map();
 	~Map();
 	Map(int length, string * theCities);
+	void setCities(int length, string * theCities);
 	bool isPath(City , City );
 	void unvisitAll();
 	void markVisited(City &);
 	City getNextCity(City );
+	void addConnection(string origin, string target);
 private:
 	int numCities;
 	City * serviceCities;

@@ -11,11 +11,12 @@ public:
 	~City();
 	City(string);
 	City(string, bool);
+	void addConnection(const City & connect);
 	bool visited;
 	bool operator=(const City & city);
 	bool operator==(const City & rightCity) const;
 	bool operator!=(const City & rightCity) const;
-	City * connectedCity;
+	string * connectedCities;
 	string name;
 private:
 
