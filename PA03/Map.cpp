@@ -3,6 +3,8 @@
 
 #include "Map.h"
 #include "City.h"
+#include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -10,16 +12,19 @@ Map::Map() {
 
 }
 
-Map::Map(const City * theCities, const City * origin, const City * target, int length) {
+Map::Map(int length, string * theCities) {
 	numCities = length;
-	cities = new City[length];
+	serviceCities = new City[numCities];
+	cout << "Service Cities" << endl;
 	for(int i = 0; i < numCities; i++) {
-		cities[i] = theCities[i];
+		City city(theCities[i]);
+		serviceCities[i] = City(theCities[i]);
+		cout << serviceCities[i].name << endl;
 	}
 }
 
 Map::~Map() {
-	delete[] cities;
+	
 }
 
 /** Tests whether a sequence of flights exists between two cities.

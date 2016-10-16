@@ -4,12 +4,15 @@
 #include "LinkedStack.h"
 #include "Node.h"
 #include "City.h"
+#include<string>
+
+using namespace std;
 
 class Map {
 public:
 	Map();
-	Map(const City * serve, const City * origin, City * target, int length);
 	~Map();
+	Map(int length, string * theCities);
 	bool isPath(City , City );
 	void unvisitAll();
 	void markVisited(City &);

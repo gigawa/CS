@@ -1,16 +1,22 @@
 #include "City.h"
 #include <iostream>
 
+using namespace std;
+
 City::City() {
-	name = NULL;
+	name = "None";
 	visited = false;
 }
 
-City::City(char * theName) {
+City::~City() {
+	
+}
+
+City::City(string theName) {
 	name = theName;
 }
 
-City::City(char * theName, bool hasVisited) {
+City::City(string theName, bool hasVisited) {
 	name = theName;
 	visited = hasVisited;
 }
