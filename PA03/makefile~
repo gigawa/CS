@@ -1,5 +1,0 @@
-PA01 : PA03.cpp
-	g++ -std=c++11 PA03.cpp
-
-clean:
-	\rm *.o PA03
