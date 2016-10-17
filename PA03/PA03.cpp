@@ -60,11 +60,13 @@ int main() {
 		fin >> ws;
 		getline(fin, requests[requestNumber]);
 		requestNumber++;
-		map.requestFlight(requests[requestNumber-2], requests[requestNumber-1]);
-	}
+		bool hasRoute = map.requestFlight(requests[requestNumber-2], requests[requestNumber-1]);
 
-	for(int j = 0; j < requestNumber; j++) {
-		cout << "Requests: " << requests[j] << endl;
+		if(hasRoute) {
+			cout << "HPAir flies from " << requests[requestNumber-2] << " to " << requests[requestNumber-1] << endl;
+		}else {
+			cout << "HPAir does not fly from " << requests[requestNumber-2] << " to " << requests[requestNumber-1] << endl;
+		}
 	}
 	
 	return 0;

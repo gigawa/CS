@@ -26,20 +26,17 @@ Map::~Map() {
 }
 
 void Map::addConnection(string origin, string target) {
-	City startCity = searchCity(origin);
-	City endCity = searchCity(target);
+	City startCity = searchCityIndex(origin);
+	City endCity = searchCityIndex(target);
 	endCity.addConnection(startCity);
 }
 
-void Map::requestFlight(string origin, string target) {
-	cout << "Request Flight" << endl;
+bool Map::requestFlight(string origin, string target) {
 	unvisitAll();
-	City startCity = searchCity(origin);
-	City endCity = searchCity(target);
+	City startCity = searchCityIndex(origin);
+	City endCity = searchCityIndex(target);
 
-	cout << "Start isPath" << endl;
-	bool hasPath = isPath(startCity, endCity);
-	cout << "Flight between: " << origin << " and " << target << " is: " << hasPath << endl;
+	return isPath(startCity, endCity);
 }
 
 /** Tests whether a sequence of flights exists between two cities.
@@ -51,7 +48,7 @@ void Map::requestFlight(string origin, string target) {
  @param  destinationCity The destination city.
  @return  True if a sequence of flights exists from originCity
     to destinationCity; otherwise returns false. */
-bool Map::isPath(City originCity, City destinationCity)
+bool Map::isPath(City & originCity, City & destinationCity)
 {
    LinkedStack<City> cityStack;
    
@@ -64,16 +61,18 @@ bool Map::isPath(City originCity, City destinationCity)
    City topCity = cityStack.peek();
    while (!cityStack.isEmpty() && (topCity != destinationCity))
    {
+		//cout << " from " << topCity.name << endl;
       // The stack contains a directed path from the origin city
       // at the bottom of the stack to the city at the top of the stack
       
       // Find an unvisited city adjacent to the city on the top of the stack
-      City nextCity = getNextCity(topCity);
-      
-      if (nextCity == NO_CITY)
+      City nextCity = getNextCity(topCity.name);
+      if (nextCity == NO_CITY) {
+		//cout << " Back Track ";
          cityStack.pop(); // No city found; backtrack
-      else // Visit city
+      } else // Visit city
       {
+		//cout << " to " << nextCity.name << endl;
          cityStack.push(nextCity);
          markVisited(nextCity);
       } // end if
@@ -92,39 +91,54 @@ void Map::unvisitAll() {
 }
 
 void Map::markVisited(City & aCity) {
-	aCity.visited = true;  
+	City * theCity = &searchCityIndex(aCity.name);
+	theCity->setVisited();
 }
 
-City Map::getNextCity(City fromCity) {
-	cout << "start getNextCity" << endl;
+City Map::getNextCity(string fromCityName) {
 	bool atEnd = false;
 	bool hasCity = false;
 	int index = 0;
 
-	City connectedCity = searchCity(fromCity.connectedCities[index]);
-	while(!atEnd) {
-		if(index == fromCity.currConnect) {
-			atEnd = true;
-		}
+	City fromCity = searchCityIndex(fromCityName);
 
-		if(connectedCity.visited == false) {
+	//cout << "Connected Cities: ";
+	for(int i = 0; i < 5; i++) {
+		//cout << fromCity.connectedCities[i] << ", ";
+	}
+	//cout << endl;
+
+	//cout << "Index Start: " << index << endl;
+
+	City connectedCity = searchCityIndex(fromCity.connectedCities[index]);
+	//cout << "From City: " << fromCity.name << endl;
+
+	while(!atEnd && !hasCity) {
+		//cout << "While Loop Attempt" << endl;
+		if(fromCity.connectedCities[index].empty()) {
+			//cout << "At End" << endl;
 			atEnd = true;
-			hasCity = true;
 		}else {
-			index++;
-			connectedCity = searchCity(fromCity.connectedCities[index]);
+			if(connectedCity.visited == false) {
+				//cout << "Has City" << endl;
+				hasCity = true;
+			}else {
+				//cout << "Has Visited" << endl;
+				index++;
+				connectedCity = searchCityIndex(fromCity.connectedCities[index]);
+			}
 		}
 	}
-
-	cout << "End while loop" << endl;
 	if(hasCity) {
-		return (connectedCity);
+		//cout << searchCityIndex(fromCity.connectedCities[index]).name << endl;
+		return searchCityIndex(fromCity.connectedCities[index]);
 	}else {
+		//cout << "NO_CITY Index: " << index << endl;
 		return NO_CITY;
 	}
 }
 
-City Map::searchCity(string theName) {
+City & Map::searchCityIndex(string theName) {
 	int i = 0;
 	while(serviceCities[i].name != theName) {
 		i++;

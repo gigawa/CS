@@ -22,9 +22,16 @@ City::City(string theName, bool hasVisited) {
 	visited = hasVisited;
 }
 
+void City::setVisited() {
+	visited = true;
+}
+
 void City::addConnection(const City & connect) {
+	int currConnect = 0;
+	while(!connectedCities[currConnect].empty()) {
+		currConnect++;
+	}
 	connectedCities[currConnect] = connect.name;
-	currConnect++;
 }
 
 bool City::operator=(const City & city) {

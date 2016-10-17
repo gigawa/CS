@@ -13,13 +13,13 @@ public:
 	Map();
 	~Map();
 	Map(int length, string * theCities);
-	bool isPath(City , City );
+	bool isPath(City &, City &);
 	void unvisitAll();
 	void markVisited(City &);
-	City getNextCity(City );
+	City getNextCity(string);
 	void addConnection(string origin, string target);
-	City searchCity(string);
-	void requestFlight(string , string);
+	City & searchCityIndex(string);
+	bool requestFlight(string , string);
 private:
 	int numCities;
 	City * serviceCities;
