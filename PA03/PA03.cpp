@@ -17,7 +17,8 @@ int main() {
 	ifstream fin;
 	fin.open("cityFile.txt");
 
-	while(fin >> serviceCities[serveCityLength]) {
+	while(getline(fin, serviceCities[serveCityLength], ',')) {
+		
 		serveCityLength++;
 	}
 
@@ -31,19 +32,19 @@ int main() {
 	
 	cout << "get flights" << endl;
 	int i = 0;
-	while(fin >> flights[numberOfFlights]) {
-		flights[numberOfFlights].pop_back();
+	while(getline(fin, flights[numberOfFlights], ',')) {
 		numberOfFlights++;
 		fin >> flights[numberOfFlights];
 		numberOfFlights++;
 		fin >> flightNumber[i];
 		fin >> price[i];
 		i++;
+		map.addConnection(flights[numberOfFlights-2], flights[numberOfFlights-1]);
 	}
 
-	cout << "Flights" << endl;
+	/*cout << "Flights" << endl;
 	for(i = 0; i < numberOfFlights; i++) {
 		cout << flights[i] << endl;
 	}
-	cout << endl;	
+	cout << endl;*/	
 }

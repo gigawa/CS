@@ -13,15 +13,15 @@ Map::Map() {
 }
 
 Map::Map(int length, string * theCities) {
-	/*cout << "Map" << endl;
+	cout << "Map" << endl;
 	numCities = length;
-	//serviceCities = new City[numCities];
+	serviceCities = new City[numCities];
 	cout << "Service Cities" << endl;
 	for(int i = 0; i < numCities; i++) {
 		City city(theCities[i]);
 		serviceCities[i] = City(theCities[i]);
 		cout << serviceCities[i].name << endl;
-	}*/
+	}
 }
 
 Map::~Map() {
@@ -41,19 +41,23 @@ void Map::setCities(int length, string * theCities) {
 
 void Map::addConnection(string origin, string target) {
 	cout << "Add Connection" << endl;
+	
 	int i = 0;
 	while(serviceCities[i].name != origin) {
-		cout << "Origin" << endl;
+		//cout << "Origin" << endl;
 		i++;
 	}
 
-	int j = 0;
+	cout << serviceCities[i].name << endl;
+
+	/*int j = 0;
 	while(serviceCities[i].name != target) {
 		cout << "Target" << endl;
 		j++;
 	}
 
-	serviceCities[i].addConnection(serviceCities[j]);
+	cout << "From " << serviceCities[i].name << " to " << serviceCities[j].name << endl;
+	serviceCities[i].addConnection(serviceCities[j]);*/
 }
 
 /** Tests whether a sequence of flights exists between two cities.
