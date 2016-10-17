@@ -40,11 +40,12 @@ void Map::setCities(int length, string * theCities) {
 }
 
 void Map::addConnection(string origin, string target) {
-	cout << "Add Connection" << endl;
+	cout << "Add Connection from " << origin << " to " << target << endl;
 	
 	int i = 0;
 	while(serviceCities[i].name != origin) {
-		//cout << "Origin" << endl;
+		cout << "Origin " << serviceCities[i].name.size() << " vs " << origin.size() << endl;
+		cout << serviceCities[i].name << " vs " << origin << endl;
 		i++;
 	}
 
