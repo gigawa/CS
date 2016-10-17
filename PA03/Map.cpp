@@ -13,14 +13,11 @@ Map::Map() {
 }
 
 Map::Map(int length, string * theCities) {
-	cout << "Map" << endl;
 	numCities = length;
 	serviceCities = new City[numCities];
-	cout << "Service Cities" << endl;
 	for(int i = 0; i < numCities; i++) {
 		City city(theCities[i]);
 		serviceCities[i] = City(theCities[i]);
-		cout << serviceCities[i].name << endl;
 	}
 }
 
@@ -28,37 +25,21 @@ Map::~Map() {
 	
 }
 
-void Map::setCities(int length, string * theCities) {
-	numCities = length;
-	serviceCities = new City[numCities];
-	cout << "Service Cities" << endl;
-	for(int i = 0; i < numCities; i++) {
-		City city(theCities[i]);
-		serviceCities[i] = City(theCities[i]);
-		cout << serviceCities[i].name << endl;
-	}
+void Map::addConnection(string origin, string target) {
+	City startCity = searchCity(origin);
+	City endCity = searchCity(target);
+	endCity.addConnection(startCity);
 }
 
-void Map::addConnection(string origin, string target) {
-	cout << "Add Connection from " << origin << " to " << target << endl;
-	
-	int i = 0;
-	while(serviceCities[i].name != origin) {
-		cout << "Origin " << serviceCities[i].name.size() << " vs " << origin.size() << endl;
-		cout << serviceCities[i].name << " vs " << origin << endl;
-		i++;
-	}
+void Map::requestFlight(string origin, string target) {
+	cout << "Request Flight" << endl;
+	unvisitAll();
+	City startCity = searchCity(origin);
+	City endCity = searchCity(target);
 
-	cout << serviceCities[i].name << endl;
-
-	/*int j = 0;
-	while(serviceCities[i].name != target) {
-		cout << "Target" << endl;
-		j++;
-	}
-
-	cout << "From " << serviceCities[i].name << " to " << serviceCities[j].name << endl;
-	serviceCities[i].addConnection(serviceCities[j]);*/
+	cout << "Start isPath" << endl;
+	bool hasPath = isPath(startCity, endCity);
+	cout << "Flight between: " << origin << " and " << target << " is: " << hasPath << endl;
 }
 
 /** Tests whether a sequence of flights exists between two cities.
@@ -106,7 +87,7 @@ bool Map::isPath(City originCity, City destinationCity)
 
 void Map::unvisitAll() {
 	for(int i = 0; i < numCities; i++) {
-		cities[i].visited = false;
+		serviceCities[i].visited = false;
 	}
 }
 
@@ -115,17 +96,38 @@ void Map::markVisited(City & aCity) {
 }
 
 City Map::getNextCity(City fromCity) {
-	int i = 0;
-	int j = 0;
-	while(serviceCities[i].name != fromCity.connectedCities[j]) {
-		cout << "Origin" << endl;
-		i++;
+	cout << "start getNextCity" << endl;
+	bool atEnd = false;
+	bool hasCity = false;
+	int index = 0;
+
+	City connectedCity = searchCity(fromCity.connectedCities[index]);
+	while(!atEnd) {
+		if(index == fromCity.currConnect) {
+			atEnd = true;
+		}
+
+		if(connectedCity.visited == false) {
+			atEnd = true;
+			hasCity = true;
+		}else {
+			index++;
+			connectedCity = searchCity(fromCity.connectedCities[index]);
+		}
 	}
-	
-	City connectedCity = serviceCities[i];
-	if(connectedCity.visited == false) {
+
+	cout << "End while loop" << endl;
+	if(hasCity) {
 		return (connectedCity);
 	}else {
 		return NO_CITY;
 	}
+}
+
+City Map::searchCity(string theName) {
+	int i = 0;
+	while(serviceCities[i].name != theName) {
+		i++;
+	}
+	return serviceCities[i];
 }
