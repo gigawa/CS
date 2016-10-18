@@ -1,4 +1,5 @@
 #include "Map.h"
+#include "Map2.h"
 #include "LinkedStack.h"
 #include<iostream>
 #include<string>
@@ -17,13 +18,17 @@ int main() {
 	int requestNumber = 0;
 
 	ifstream fin;
+	ofstream fout;
 	fin.open("cityFile.txt");
+	fout.open("HPAir.log.txt");
+	fout.close();
 
 	while(getline(fin, serviceCities[serveCityLength])) {
 		serveCityLength++;
 	}
 
 	Map map(serveCityLength, serviceCities);
+	Map2 map2(serveCityLength, serviceCities);
 
 	fin.close();
 
@@ -50,6 +55,7 @@ int main() {
 		fin >> ws;
 		i++;
 		map.addConnection(flights[numberOfFlights-2], flights[numberOfFlights-1]);
+		map2.addConnection(flights[numberOfFlights-2], flights[numberOfFlights-1]);
 	}
 
 	fin.close();
@@ -61,6 +67,7 @@ int main() {
 		getline(fin, requests[requestNumber]);
 		requestNumber++;
 		bool hasRoute = map.requestFlight(requests[requestNumber-2], requests[requestNumber-1]);
+		bool hasRoute2 = map2.requestFlight(requests[requestNumber-2], requests[requestNumber-1]);
 
 		if(hasRoute) {
 			cout << "HPAir flies from " << requests[requestNumber-2] << " to " << requests[requestNumber-1] << endl;
