@@ -23,10 +23,12 @@ int main() {
 	fout.open("HPAir.log.txt");
 	fout.close();
 
+	//reads in all serviced cities
 	while(getline(fin, serviceCities[serveCityLength])) {
 		serveCityLength++;
 	}
 
+	//initializes maps
 	Map map(serveCityLength, serviceCities);
 	Map2 map2(serveCityLength, serviceCities);
 
@@ -34,6 +36,7 @@ int main() {
 
 	fin.open("flightFile.txt");
 	
+	//reads in flight paths
 	int i = 0;
 	while(getline(fin, flights[numberOfFlights], ',')) {
 		numberOfFlights++;
@@ -41,6 +44,7 @@ int main() {
 		char peekedChar;
 		fin >> ws;
 		peekedChar = fin.peek();
+		//checks if reading int or string
 		while(!isdigit(peekedChar)) {
 			string extraName;
 			fin >> extraName;
@@ -54,21 +58,25 @@ int main() {
 		fin >> price[i];
 		fin >> ws;
 		i++;
+		//adds flight connections to map
 		map.addConnection(flights[numberOfFlights-2], flights[numberOfFlights-1]);
 		map2.addConnection(flights[numberOfFlights-2], flights[numberOfFlights-1]);
 	}
 
 	fin.close();
 
+	//reads in flight requests
 	fin.open("requestFile.txt");
 	while(getline(fin, requests[requestNumber], ',')) {
 		requestNumber++;
 		fin >> ws;
 		getline(fin, requests[requestNumber]);
 		requestNumber++;
+		//checks if there is a route
 		bool hasRoute = map.requestFlight(requests[requestNumber-2], requests[requestNumber-1]);
 		bool hasRoute2 = map2.requestFlight(requests[requestNumber-2], requests[requestNumber-1]);
 
+		//prints if a path exists or not
 		if(hasRoute) {
 			cout << "HPAir flies from " << requests[requestNumber-2] << " to " << requests[requestNumber-1] << endl;
 		}else {
