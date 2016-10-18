@@ -1,0 +1,18 @@
+Script started on Mon 17 Oct 2016 10:57:48 PM PDT
+]0;grant@ubuntu: ~/Desktop/CS302/PA03[01;32mgrant@ubuntu[00m:[01;34m~/Desktop/CS302/PA03[00m$ make
+g++ -c -std=c++11 City.cpp City.h
+g++ -c -std=c++11 FlightMap.v1.cpp Map.h
+g++ -std=c++11 PA03.cpp City.o FlightMap.v1.o -o PA03
+]0;grant@ubuntu: ~/Desktop/CS302/PA03[01;32mgrant@ubuntu[00m:[01;34m~/Desktop/CS302/PA03[00m$ ./PA03
+HPAir flies from Los Angeles to Houston
+HPAir flies from Glendale to Houston
+HPAir does not fly from Dallas to Austin
+HPAir flies from Cleveland to Chicago
+HPAir flies from Indianapolis to San Francisco
+HPAir flies from San Francisco to Washington
+HPAir flies from Boston to Columbia
+HPAir flies from Miami to Denver
+]0;grant@ubuntu: ~/Desktop/CS302/PA03[01;32mgrant@ubuntu[00m:[01;34m~/Desktop/CS302/PA03[00m$ exit
+exit
+
+Script done on Mon 17 Oct 2016 10:58:01 PM PDT

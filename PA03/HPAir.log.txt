@@ -1,0 +1,479 @@
+
+FlightMap.v1.cpp
+
+Stack Push originCity: Los Angeles
+Stack Push: Indianapolis
+Stack Pop: Indianapolis
+Stack Push: Miami
+Stack Push: Atlanta
+Stack Push: Chicago
+Stack Push: Boise
+Stack Pop: Boise
+Stack Push: Boston
+Stack Pop: Boston
+Stack Push: Houston
+Stack Top: Houston
+
+FlightMap.v2.cpp
+
+Stack Push originCity: Los Angeles
+getNextCity Start Index: 0
+Stack Push: Indianapolis
+getNextCity Start Index: 0
+Stack Pop: Indianapolis
+getNextCity Start Index: 0
+Stack Push: Miami
+getNextCity Start Index: 0
+Stack Push: Atlanta
+getNextCity Start Index: 0
+Stack Push: Chicago
+getNextCity Start Index: 0
+Stack Push: Boise
+getNextCity Start Index: 0
+Stack Pop: Boise
+getNextCity Start Index: 1
+Stack Push: Boston
+getNextCity Start Index: 0
+Stack Pop: Boston
+getNextCity Start Index: 2
+Stack Push: Houston
+Stack Top: Houston
+
+FlightMap.v1.cpp
+
+Stack Push originCity: Glendale
+Stack Push: Houston
+Stack Top: Houston
+
+FlightMap.v2.cpp
+
+Stack Push originCity: Glendale
+getNextCity Start Index: 0
+Stack Push: Houston
+Stack Top: Houston
+
+FlightMap.v1.cpp
+
+Stack Push originCity: Dallas
+Stack Push: Houston
+Stack Push: Chicago
+Stack Push: Atlanta
+Stack Push: Miami
+Stack Push: Los Angeles
+Stack Push: Indianapolis
+Stack Pop: Indianapolis
+Stack Push: San Francisco
+Stack Pop: San Francisco
+Stack Push: Tampa
+Stack Pop: Tampa
+Stack Push: Washington
+Stack Pop: Washington
+Stack Pop: Los Angeles
+Stack Pop: Miami
+Stack Pop: Atlanta
+Stack Push: Boise
+Stack Pop: Boise
+Stack Push: Boston
+Stack Pop: Boston
+Stack Pop: Chicago
+Stack Push: Cleveland
+Stack Pop: Cleveland
+Stack Push: Columbia
+Stack Pop: Columbia
+Stack Push: Denton
+Stack Pop: Denton
+Stack Push: Denver
+Stack Pop: Denver
+Stack Pop: Houston
+Stack Pop: Dallas
+Stack is Empty
+
+FlightMap.v2.cpp
+
+Stack Push originCity: Dallas
+getNextCity Start Index: 0
+Stack Push: Houston
+getNextCity Start Index: 0
+Stack Push: Chicago
+getNextCity Start Index: 0
+Stack Push: Atlanta
+getNextCity Start Index: 0
+Stack Push: Miami
+getNextCity Start Index: 0
+Stack Push: Los Angeles
+getNextCity Start Index: 0
+Stack Push: Indianapolis
+getNextCity Start Index: 0
+Stack Pop: Indianapolis
+getNextCity Start Index: 0
+Stack Push: San Francisco
+getNextCity Start Index: 0
+Stack Pop: San Francisco
+getNextCity Start Index: 2
+Stack Push: Tampa
+getNextCity Start Index: 0
+Stack Pop: Tampa
+getNextCity Start Index: 3
+Stack Push: Washington
+getNextCity Start Index: 0
+Stack Pop: Washington
+getNextCity Start Index: 4
+Stack Pop: Los Angeles
+getNextCity Start Index: 1
+Stack Pop: Miami
+getNextCity Start Index: 1
+Stack Pop: Atlanta
+getNextCity Start Index: 0
+Stack Push: Boise
+getNextCity Start Index: 0
+Stack Pop: Boise
+getNextCity Start Index: 1
+Stack Push: Boston
+getNextCity Start Index: 0
+Stack Pop: Boston
+getNextCity Start Index: 2
+Stack Pop: Chicago
+getNextCity Start Index: 0
+Stack Push: Cleveland
+getNextCity Start Index: 0
+Stack Pop: Cleveland
+getNextCity Start Index: 1
+Stack Push: Columbia
+getNextCity Start Index: 0
+Stack Pop: Columbia
+getNextCity Start Index: 2
+Stack Push: Denton
+getNextCity Start Index: 0
+Stack Pop: Denton
+getNextCity Start Index: 4
+Stack Push: Denver
+getNextCity Start Index: 0
+Stack Pop: Denver
+getNextCity Start Index: 5
+Stack Pop: Houston
+getNextCity Start Index: 0
+Stack Pop: Dallas
+Stack is Empty
+
+FlightMap.v1.cpp
+
+Stack Push originCity: Cleveland
+Stack Push: Houston
+Stack Push: Chicago
+Stack Top: Chicago
+
+FlightMap.v2.cpp
+
+Stack Push originCity: Cleveland
+getNextCity Start Index: 0
+Stack Push: Houston
+getNextCity Start Index: 0
+Stack Push: Chicago
+Stack Top: Chicago
+
+FlightMap.v1.cpp
+
+Stack Push originCity: Indianapolis
+Stack Push: Los Angeles
+Stack Push: Miami
+Stack Push: Atlanta
+Stack Push: Chicago
+Stack Push: Boise
+Stack Pop: Boise
+Stack Push: Boston
+Stack Pop: Boston
+Stack Push: Houston
+Stack Push: Cleveland
+Stack Pop: Cleveland
+Stack Push: Columbia
+Stack Pop: Columbia
+Stack Push: Dallas
+Stack Pop: Dallas
+Stack Push: Denton
+Stack Pop: Denton
+Stack Push: Denver
+Stack Pop: Denver
+Stack Pop: Houston
+Stack Pop: Chicago
+Stack Pop: Atlanta
+Stack Pop: Miami
+Stack Push: San Francisco
+Stack Top: San Francisco
+
+FlightMap.v2.cpp
+
+Stack Push originCity: Indianapolis
+getNextCity Start Index: 0
+Stack Push: Los Angeles
+getNextCity Start Index: 0
+Stack Push: Miami
+getNextCity Start Index: 0
+Stack Push: Atlanta
+getNextCity Start Index: 0
+Stack Push: Chicago
+getNextCity Start Index: 0
+Stack Push: Boise
+getNextCity Start Index: 0
+Stack Pop: Boise
+getNextCity Start Index: 1
+Stack Push: Boston
+getNextCity Start Index: 0
+Stack Pop: Boston
+getNextCity Start Index: 2
+Stack Push: Houston
+getNextCity Start Index: 0
+Stack Push: Cleveland
+getNextCity Start Index: 0
+Stack Pop: Cleveland
+getNextCity Start Index: 1
+Stack Push: Columbia
+getNextCity Start Index: 0
+Stack Pop: Columbia
+getNextCity Start Index: 2
+Stack Push: Dallas
+getNextCity Start Index: 0
+Stack Pop: Dallas
+getNextCity Start Index: 3
+Stack Push: Denton
+getNextCity Start Index: 0
+Stack Pop: Denton
+getNextCity Start Index: 4
+Stack Push: Denver
+getNextCity Start Index: 0
+Stack Pop: Denver
+getNextCity Start Index: 5
+Stack Pop: Houston
+getNextCity Start Index: 3
+Stack Pop: Chicago
+getNextCity Start Index: 0
+Stack Pop: Atlanta
+getNextCity Start Index: 0
+Stack Pop: Miami
+getNextCity Start Index: 1
+Stack Push: San Francisco
+Stack Top: San Francisco
+
+FlightMap.v1.cpp
+
+Stack Push originCity: San Francisco
+Stack Push: Los Angeles
+Stack Push: Indianapolis
+Stack Pop: Indianapolis
+Stack Push: Miami
+Stack Push: Atlanta
+Stack Push: Chicago
+Stack Push: Boise
+Stack Pop: Boise
+Stack Push: Boston
+Stack Pop: Boston
+Stack Push: Houston
+Stack Push: Cleveland
+Stack Pop: Cleveland
+Stack Push: Columbia
+Stack Pop: Columbia
+Stack Push: Dallas
+Stack Pop: Dallas
+Stack Push: Denton
+Stack Pop: Denton
+Stack Push: Denver
+Stack Pop: Denver
+Stack Pop: Houston
+Stack Pop: Chicago
+Stack Pop: Atlanta
+Stack Pop: Miami
+Stack Push: Tampa
+Stack Pop: Tampa
+Stack Push: Washington
+Stack Top: Washington
+
+FlightMap.v2.cpp
+
+Stack Push originCity: San Francisco
+getNextCity Start Index: 0
+Stack Push: Los Angeles
+getNextCity Start Index: 0
+Stack Push: Indianapolis
+getNextCity Start Index: 0
+Stack Pop: Indianapolis
+getNextCity Start Index: 0
+Stack Push: Miami
+getNextCity Start Index: 0
+Stack Push: Atlanta
+getNextCity Start Index: 0
+Stack Push: Chicago
+getNextCity Start Index: 0
+Stack Push: Boise
+getNextCity Start Index: 0
+Stack Pop: Boise
+getNextCity Start Index: 1
+Stack Push: Boston
+getNextCity Start Index: 0
+Stack Pop: Boston
+getNextCity Start Index: 2
+Stack Push: Houston
+getNextCity Start Index: 0
+Stack Push: Cleveland
+getNextCity Start Index: 0
+Stack Pop: Cleveland
+getNextCity Start Index: 1
+Stack Push: Columbia
+getNextCity Start Index: 0
+Stack Pop: Columbia
+getNextCity Start Index: 2
+Stack Push: Dallas
+getNextCity Start Index: 0
+Stack Pop: Dallas
+getNextCity Start Index: 3
+Stack Push: Denton
+getNextCity Start Index: 0
+Stack Pop: Denton
+getNextCity Start Index: 4
+Stack Push: Denver
+getNextCity Start Index: 0
+Stack Pop: Denver
+getNextCity Start Index: 5
+Stack Pop: Houston
+getNextCity Start Index: 3
+Stack Pop: Chicago
+getNextCity Start Index: 0
+Stack Pop: Atlanta
+getNextCity Start Index: 0
+Stack Pop: Miami
+getNextCity Start Index: 1
+Stack Push: Tampa
+getNextCity Start Index: 0
+Stack Pop: Tampa
+getNextCity Start Index: 3
+Stack Push: Washington
+Stack Top: Washington
+
+FlightMap.v1.cpp
+
+Stack Push originCity: Boston
+Stack Push: Chicago
+Stack Push: Atlanta
+Stack Push: Miami
+Stack Push: Los Angeles
+Stack Push: Indianapolis
+Stack Pop: Indianapolis
+Stack Push: San Francisco
+Stack Pop: San Francisco
+Stack Push: Tampa
+Stack Pop: Tampa
+Stack Push: Washington
+Stack Pop: Washington
+Stack Pop: Los Angeles
+Stack Pop: Miami
+Stack Pop: Atlanta
+Stack Push: Boise
+Stack Pop: Boise
+Stack Push: Houston
+Stack Push: Cleveland
+Stack Pop: Cleveland
+Stack Push: Columbia
+Stack Top: Columbia
+
+FlightMap.v2.cpp
+
+Stack Push originCity: Boston
+getNextCity Start Index: 0
+Stack Push: Chicago
+getNextCity Start Index: 0
+Stack Push: Atlanta
+getNextCity Start Index: 0
+Stack Push: Miami
+getNextCity Start Index: 0
+Stack Push: Los Angeles
+getNextCity Start Index: 0
+Stack Push: Indianapolis
+getNextCity Start Index: 0
+Stack Pop: Indianapolis
+getNextCity Start Index: 0
+Stack Push: San Francisco
+getNextCity Start Index: 0
+Stack Pop: San Francisco
+getNextCity Start Index: 2
+Stack Push: Tampa
+getNextCity Start Index: 0
+Stack Pop: Tampa
+getNextCity Start Index: 3
+Stack Push: Washington
+getNextCity Start Index: 0
+Stack Pop: Washington
+getNextCity Start Index: 4
+Stack Pop: Los Angeles
+getNextCity Start Index: 1
+Stack Pop: Miami
+getNextCity Start Index: 1
+Stack Pop: Atlanta
+getNextCity Start Index: 0
+Stack Push: Boise
+getNextCity Start Index: 0
+Stack Pop: Boise
+getNextCity Start Index: 1
+Stack Push: Houston
+getNextCity Start Index: 0
+Stack Push: Cleveland
+getNextCity Start Index: 0
+Stack Pop: Cleveland
+getNextCity Start Index: 1
+Stack Push: Columbia
+Stack Top: Columbia
+
+FlightMap.v1.cpp
+
+Stack Push originCity: Miami
+Stack Push: Atlanta
+Stack Push: Chicago
+Stack Push: Boise
+Stack Pop: Boise
+Stack Push: Boston
+Stack Pop: Boston
+Stack Push: Houston
+Stack Push: Cleveland
+Stack Pop: Cleveland
+Stack Push: Columbia
+Stack Pop: Columbia
+Stack Push: Dallas
+Stack Pop: Dallas
+Stack Push: Denton
+Stack Pop: Denton
+Stack Push: Denver
+Stack Top: Denver
+
+FlightMap.v2.cpp
+
+Stack Push originCity: Miami
+getNextCity Start Index: 0
+Stack Push: Atlanta
+getNextCity Start Index: 0
+Stack Push: Chicago
+getNextCity Start Index: 0
+Stack Push: Boise
+getNextCity Start Index: 0
+Stack Pop: Boise
+getNextCity Start Index: 1
+Stack Push: Boston
+getNextCity Start Index: 0
+Stack Pop: Boston
+getNextCity Start Index: 2
+Stack Push: Houston
+getNextCity Start Index: 0
+Stack Push: Cleveland
+getNextCity Start Index: 0
+Stack Pop: Cleveland
+getNextCity Start Index: 1
+Stack Push: Columbia
+getNextCity Start Index: 0
+Stack Pop: Columbia
+getNextCity Start Index: 2
+Stack Push: Dallas
+getNextCity Start Index: 0
+Stack Pop: Dallas
+getNextCity Start Index: 3
+Stack Push: Denton
+getNextCity Start Index: 0
+Stack Pop: Denton
+getNextCity Start Index: 4
+Stack Push: Denver
+Stack Top: Denver
