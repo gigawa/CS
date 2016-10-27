@@ -1,6 +1,8 @@
-#include<iostream>
-#include<fstream>
-#include<string>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <ctime>
+#include <cstdlib>
 #include "BubbleSort.h"
 #include "MergeSort.h"
 
@@ -9,23 +11,15 @@ using namespace std;
 int main() {
 	int compare = 0;
 	int swap = 0;
-	int dataNumber;
-	char * fileName = new char[20];
-	cout << "Enter number of values to be sorted: ";
-	cin >> dataNumber;
+	int dataNumber = 1000;
 	int * data = new int[dataNumber];
 	int * bubbleData = new int[dataNumber];
 	int * mergeData = new int[dataNumber];
-	cout << "Enter the file name: ";
-	cin >> fileName;
 
-	ifstream fin;
-	fin.open(fileName);
-	
-	int index = 0;
-	while(fin >> data[index])
-	{
-		index++;
+	srand(time(NULL));
+
+	for(int i = 0; i < dataNumber; i++) {
+		data[i] = rand() % dataNumber;
 	}
 
 	for(int i = 0; i < dataNumber; i++) {
@@ -40,6 +34,7 @@ int main() {
 	for(int i = 0; i < dataNumber; i++) {
 		cout << bubbleData[i] << ", ";
 	}
+	cout << endl;
 	cout << "Comparisons: " << compare << endl;
 	cout << "Swaps: " << swap << endl << endl;
 
@@ -50,6 +45,7 @@ int main() {
 	for(int i = 0; i < dataNumber; i++) {
 		cout << mergeData[i] << ", ";
 	}
+	cout << endl;
 	cout << "Comparisons: " << compare << endl;
 	cout << "Swaps: " << swap << endl << endl;
 
