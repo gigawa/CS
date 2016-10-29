@@ -2,6 +2,7 @@
 //  Copyright (c) 2017 Pearson Education, Hoboken, New Jersey.
 
 // Listing 11-4.
+#include "MergeSort.h"
 
 template <class ItemType>
 MergeSort<ItemType>::MergeSort(ItemType theArray[], int size, int & compare, int & swap) {
