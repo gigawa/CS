@@ -38,10 +38,10 @@ void MergeSort<ItemType>::merge(ItemType theArray[], int first, int mid, int las
    int index = first1;           // Next available location in tempArray
    while ((first1 <= last1) && (first2 <= last2))
    {
-      compare++;
       // At this point, tempArray[first..index–1] is in order
       if (theArray[first1] <= theArray[first2])
       {
+	 compare++;
          tempArray[index] = theArray[first1];
          first1++;
       }
