@@ -12,7 +12,7 @@ using namespace std;
 int main() {
 	int compare = 0;
 	int swap = 0;
-	int dataNumber = 10;
+	int dataNumber = 100000;
 	int * data = new int[dataNumber];
 	int * bubbleData = new int[dataNumber];
 	int * mergeData = new int[dataNumber];
@@ -20,9 +20,11 @@ int main() {
 
 	int start;
 	int stop;
-	float sortTime;
+	float bubbleSortTime = 0;
+	float mergeSortTime = 0;
+	float countSortTime = 0;
 
-	for(int attempts = 0; attempts < 1; attempts++) {
+	for(int attempts = 0; attempts < 10; attempts++) {
 		srand(time(NULL));
 
 		for(int i = 0; i < dataNumber; i++) {
@@ -35,20 +37,14 @@ int main() {
 			countData[i] = data[i];
 		}
 
-		cout << "Unsorted" << endl;
-		for(int i = 0; i < dataNumber; i++) {
-			cout << data << ", ";
-		}
-		cout << endl;
-
-		/*//Bubble sort
+		//Bubble sort
 		start = clock();
 		BubbleSort<int> bubbleSort(bubbleData, dataNumber, compare, swap);
 		stop = clock();
-		sortTime = (stop-start)/double(CLOCKS_PER_SEC)*1;
+		bubbleSortTime += (stop-start)/double(CLOCKS_PER_SEC)*1;
 
 		cout << "Bubble Sort" << endl;
-		cout << "Time: " << sortTime << endl;
+		cout << "Time: " << bubbleSortTime << endl;
 		cout << "Comparisons: " << compare << endl;
 		cout << "Swaps: " << swap << endl << endl;
 
@@ -56,30 +52,33 @@ int main() {
 		start = clock();
 		MergeSort<int> mergeSort(mergeData, dataNumber, compare, swap);
 		stop = clock();
-		sortTime = (stop-start)/double(CLOCKS_PER_SEC)*1;
+		mergeSortTime += (stop-start)/double(CLOCKS_PER_SEC)*1;
 
 		cout << "Merge Sort" << endl;
-		cout << "Time: " << sortTime << endl;
+		cout << "Time: " << mergeSortTime << endl;
 		cout << "Comparisons: " << compare << endl;
 		cout << "Swaps: " << swap << endl << endl;
 
-		*///Counting Sort
+		//Counting Sort
 		start = clock();
 		CountingSort<int> countingSort(countData, dataNumber, compare, swap);
 		stop = clock();
-		sortTime = (stop-start)/double(CLOCKS_PER_SEC)*1;
+		countSortTime += (stop-start)/double(CLOCKS_PER_SEC)*1;
 
 		cout << "Counting Sort" << endl;
-		cout << "Time: " << sortTime << endl;
+		cout << "Time: " << countSortTime << endl;
 		cout << "Comparisons: " << compare << endl;
 		cout << "Swaps: " << swap << endl << endl;
-
-		for(int i = 0; i < dataNumber; i++) {
-			cout << countData << ", ";
-			cout << data << ", ";
-		}
-		cout << endl;
 	}
+
+	cout << "Average Bubble Sort Time: " << bubbleSortTime/10 << endl;
+	cout << "Average Merge Sort Time: " << mergeSortTime/10 << endl;
+	cout << "Average Counting Sort Time: " << countSortTime/10 << endl;
+
+	delete[] data;
+	delete[] countData;
+	delete[] mergeData;
+	delete[] bubbleData;
 
 	return 0;
 }
