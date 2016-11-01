@@ -16,7 +16,7 @@ using namespace std;
  @param n  The size of theArray. */
 
 template <class ItemType>
-BubbleSort<ItemType>::BubbleSort(ItemType theArray[], int n, int & c, int & s)
+BubbleSort<ItemType>::BubbleSort(ItemType theArray[], int n, long int & c, long int & s)
 {
    bool sorted = false; // False when swaps occur
    int pass = 1;

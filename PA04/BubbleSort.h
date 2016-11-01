@@ -4,7 +4,7 @@
 template <class ItemType>
 class BubbleSort {
 public:
-	BubbleSort(ItemType theArray[], int n, int & c, int & s);
+	BubbleSort(ItemType theArray[], int n, long int & c, long int & s);
 private:
 };
 

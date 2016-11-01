@@ -4,7 +4,7 @@
 template <class ItemType>
 class CountingSort {
 public:
-	CountingSort(ItemType theArray[], int n, int & c, int & s);
+	CountingSort(ItemType theArray[], int n, long int & c, long int & s);
 private:
 };
 

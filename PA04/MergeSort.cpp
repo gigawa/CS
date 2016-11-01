@@ -5,7 +5,7 @@
 #include "MergeSort.h"
 
 template <class ItemType>
-MergeSort<ItemType>::MergeSort(ItemType theArray[], int size, int & compare, int & swap) {
+MergeSort<ItemType>::MergeSort(ItemType theArray[], int size, long int & compare, long int & swap) {
 	MAX_SIZE = size;
 	mergeSort(theArray, 0, size, compare, swap);
 }
@@ -25,7 +25,7 @@ MergeSort<ItemType>::MergeSort(ItemType theArray[], int size, int & compare, int
  @note  This function merges the two subarrays into a temporary
     array and copies the result into the original array theArray. */
 template <class ItemType>
-void MergeSort<ItemType>::merge(ItemType theArray[], int first, int mid, int last, int & compare, int & swap)
+void MergeSort<ItemType>::merge(ItemType theArray[], int first, int mid, int last, long int & compare, long int & swap)
 {
    ItemType tempArray[MAX_SIZE]; // Temporary array
                                  // Initialize the local indices to indicate the subarrays
@@ -86,7 +86,7 @@ void MergeSort<ItemType>::merge(ItemType theArray[], int first, int mid, int las
  @param first  The index of the first element to consider in theArray.
  @param last  The index of the last element to consider in theArray. */
 template<class ItemType>
-void MergeSort<ItemType>::mergeSort(ItemType theArray[], int first, int last, int & compare, int & swap)
+void MergeSort<ItemType>::mergeSort(ItemType theArray[], int first, int last, long int & compare, long int & swap)
 {
    if (first < last)
    {

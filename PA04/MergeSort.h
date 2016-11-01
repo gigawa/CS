@@ -4,9 +4,9 @@
 template <class ItemType>
 class MergeSort {
 public:
-	MergeSort(ItemType theArray[], int size, int & compare, int & swap);
-	void mergeSort(ItemType theArray[], int first, int last, int & compare, int & swap);
-	void merge(ItemType theArray[], int first, int mid, int last, int & compare, int & swap);
+	MergeSort(ItemType theArray[], int size, long int & compare, long int & swap);
+	void mergeSort(ItemType theArray[], int first, int last, long int & compare, long int & swap);
+	void merge(ItemType theArray[], int first, int mid, int last, long int & compare, long int & swap);
 private:
 	int MAX_SIZE;
 };
