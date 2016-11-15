@@ -1,0 +1,139 @@
+\hypertarget{class_sorted_list_interface}{}\subsection{Sorted\+List\+Interface$<$ Item\+Type $>$ Class Template Reference}
+\label{class_sorted_list_interface}\index{Sorted\+List\+Interface$<$ Item\+Type $>$@{Sorted\+List\+Interface$<$ Item\+Type $>$}}
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{class_sorted_list_interface_a0d007da05c3c8b7bf79ca49d9e847f80}{insert\+Sorted} (const Item\+Type \&new\+Entry)=0
+\item 
+virtual bool \hyperlink{class_sorted_list_interface_a1d3e8563466eaa5bf83194b7605415f9}{remove\+Sorted} (const Item\+Type \&an\+Entry)=0
+\item 
+virtual int \hyperlink{class_sorted_list_interface_afee100702e36fa36f51d552bbc73cd06}{get\+Position} (const Item\+Type \&an\+Entry) const =0
+\item 
+virtual bool \hyperlink{class_sorted_list_interface_ab0af7dc09abfc8f9f952036cc3f8796e}{is\+Empty} () const =0
+\item 
+virtual int \hyperlink{class_sorted_list_interface_a87ef0eb556e3562c56af440ed533b9fa}{get\+Length} () const =0
+\item 
+virtual bool \hyperlink{class_sorted_list_interface_a7fefb851921800f8922a40e35ed8e857}{remove} (int position)=0
+\item 
+virtual void \hyperlink{class_sorted_list_interface_ac51f6d42fd5c85b8dd7345c60c05d294}{clear} ()=0
+\item 
+virtual Item\+Type \hyperlink{class_sorted_list_interface_a885144819e36390d2f5531707939f58c}{get\+Entry} (int position) const =0
+\item 
+virtual \hyperlink{class_sorted_list_interface_af9d9ce08375db3e036603246513f85d9}{$\sim$\+Sorted\+List\+Interface} ()
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Constructor \& Destructor Documentation}
+\index{Sorted\+List\+Interface@{Sorted\+List\+Interface}!````~Sorted\+List\+Interface@{$\sim$\+Sorted\+List\+Interface}}
+\index{````~Sorted\+List\+Interface@{$\sim$\+Sorted\+List\+Interface}!Sorted\+List\+Interface@{Sorted\+List\+Interface}}
+\paragraph[{\texorpdfstring{$\sim$\+Sorted\+List\+Interface()}{~SortedListInterface()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ virtual {\bf Sorted\+List\+Interface}$<$ Item\+Type $>$\+::$\sim${\bf Sorted\+List\+Interface} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_sorted_list_interface_af9d9ce08375db3e036603246513f85d9}{}\label{class_sorted_list_interface_af9d9ce08375db3e036603246513f85d9}
+Destroys this sorted list and frees its assigned memory. 
+
+\subsubsection{Member Function Documentation}
+\index{Sorted\+List\+Interface@{Sorted\+List\+Interface}!clear@{clear}}
+\index{clear@{clear}!Sorted\+List\+Interface@{Sorted\+List\+Interface}}
+\paragraph[{\texorpdfstring{clear()=0}{clear()=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ virtual void {\bf Sorted\+List\+Interface}$<$ Item\+Type $>$\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_sorted_list_interface_ac51f6d42fd5c85b8dd7345c60c05d294}{}\label{class_sorted_list_interface_ac51f6d42fd5c85b8dd7345c60c05d294}
+Removes all entries from this list. \index{Sorted\+List\+Interface@{Sorted\+List\+Interface}!get\+Entry@{get\+Entry}}
+\index{get\+Entry@{get\+Entry}!Sorted\+List\+Interface@{Sorted\+List\+Interface}}
+\paragraph[{\texorpdfstring{get\+Entry(int position) const =0}{getEntry(int position) const =0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ virtual Item\+Type {\bf Sorted\+List\+Interface}$<$ Item\+Type $>$\+::get\+Entry (
+\begin{DoxyParamCaption}
+\item[{int}]{position}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_sorted_list_interface_a885144819e36390d2f5531707939f58c}{}\label{class_sorted_list_interface_a885144819e36390d2f5531707939f58c}
+Gets the entry at the given position in this list. \index{Sorted\+List\+Interface@{Sorted\+List\+Interface}!get\+Length@{get\+Length}}
+\index{get\+Length@{get\+Length}!Sorted\+List\+Interface@{Sorted\+List\+Interface}}
+\paragraph[{\texorpdfstring{get\+Length() const =0}{getLength() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ virtual int {\bf Sorted\+List\+Interface}$<$ Item\+Type $>$\+::get\+Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_sorted_list_interface_a87ef0eb556e3562c56af440ed533b9fa}{}\label{class_sorted_list_interface_a87ef0eb556e3562c56af440ed533b9fa}
+Gets the current number of entries in this list. \index{Sorted\+List\+Interface@{Sorted\+List\+Interface}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Sorted\+List\+Interface@{Sorted\+List\+Interface}}
+\paragraph[{\texorpdfstring{get\+Position(const Item\+Type \&an\+Entry) const =0}{getPosition(const ItemType &anEntry) const =0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ virtual int {\bf Sorted\+List\+Interface}$<$ Item\+Type $>$\+::get\+Position (
+\begin{DoxyParamCaption}
+\item[{const Item\+Type \&}]{an\+Entry}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_sorted_list_interface_afee100702e36fa36f51d552bbc73cd06}{}\label{class_sorted_list_interface_afee100702e36fa36f51d552bbc73cd06}
+Gets the position of the first or only occurrence of the given entry in this sorted list. In case the entry is not in the list, determines where it should be if it were added to the list. \begin{DoxyPrecond}{Precondition}
+None. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The position where the given entry is or belongs is returned. The sorted list is unchanged. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em an\+Entry} & The entry to locate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Either the position of the given entry, if it occurs in the sorted list, or the position where the entry would occur, but as a negative integer. 
+\end{DoxyReturn}
+\index{Sorted\+List\+Interface@{Sorted\+List\+Interface}!insert\+Sorted@{insert\+Sorted}}
+\index{insert\+Sorted@{insert\+Sorted}!Sorted\+List\+Interface@{Sorted\+List\+Interface}}
+\paragraph[{\texorpdfstring{insert\+Sorted(const Item\+Type \&new\+Entry)=0}{insertSorted(const ItemType &newEntry)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ virtual bool {\bf Sorted\+List\+Interface}$<$ Item\+Type $>$\+::insert\+Sorted (
+\begin{DoxyParamCaption}
+\item[{const Item\+Type \&}]{new\+Entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_sorted_list_interface_a0d007da05c3c8b7bf79ca49d9e847f80}{}\label{class_sorted_list_interface_a0d007da05c3c8b7bf79ca49d9e847f80}
+Inserts an entry into this sorted list in its proper order so that the list remains sorted. \begin{DoxyPrecond}{Precondition}
+None. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+new\+Entry is in the list, and the list is sorted. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Entry} & The entry to insert into the sorted list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if insertion is successful, or false if not. 
+\end{DoxyReturn}
+\index{Sorted\+List\+Interface@{Sorted\+List\+Interface}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Sorted\+List\+Interface@{Sorted\+List\+Interface}}
+\paragraph[{\texorpdfstring{is\+Empty() const =0}{isEmpty() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ virtual bool {\bf Sorted\+List\+Interface}$<$ Item\+Type $>$\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_sorted_list_interface_ab0af7dc09abfc8f9f952036cc3f8796e}{}\label{class_sorted_list_interface_ab0af7dc09abfc8f9f952036cc3f8796e}
+Sees whether this list is empty. \index{Sorted\+List\+Interface@{Sorted\+List\+Interface}!remove@{remove}}
+\index{remove@{remove}!Sorted\+List\+Interface@{Sorted\+List\+Interface}}
+\paragraph[{\texorpdfstring{remove(int position)=0}{remove(int position)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ virtual bool {\bf Sorted\+List\+Interface}$<$ Item\+Type $>$\+::remove (
+\begin{DoxyParamCaption}
+\item[{int}]{position}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_sorted_list_interface_a7fefb851921800f8922a40e35ed8e857}{}\label{class_sorted_list_interface_a7fefb851921800f8922a40e35ed8e857}
+Removes the entry at a given position from this list. \index{Sorted\+List\+Interface@{Sorted\+List\+Interface}!remove\+Sorted@{remove\+Sorted}}
+\index{remove\+Sorted@{remove\+Sorted}!Sorted\+List\+Interface@{Sorted\+List\+Interface}}
+\paragraph[{\texorpdfstring{remove\+Sorted(const Item\+Type \&an\+Entry)=0}{removeSorted(const ItemType &anEntry)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ virtual bool {\bf Sorted\+List\+Interface}$<$ Item\+Type $>$\+::remove\+Sorted (
+\begin{DoxyParamCaption}
+\item[{const Item\+Type \&}]{an\+Entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_sorted_list_interface_a1d3e8563466eaa5bf83194b7605415f9}{}\label{class_sorted_list_interface_a1d3e8563466eaa5bf83194b7605415f9}
+Removes the first or only occurrence of the given entry from this sorted list. \begin{DoxyPrecond}{Precondition}
+None. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+If the removal is successful, the first occurrence of the given entry is no longer in the sorted list, and the returned value is true. Otherwise, the sorted list is unchanged and the returned value is false. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em an\+Entry} & The entry to remove. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if removal is successful, or false if not. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_sorted_list_interface_8h}{Sorted\+List\+Interface.\+h}\end{DoxyCompactItemize}

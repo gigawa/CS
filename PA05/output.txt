@@ -1,0 +1,32 @@
+One Teller with One Queue
+Simulation Time: 43.593
+Virtual Time: 503199
+Average Wait: 183611
+Max Wait: 493175
+Maximum Length of Line: 9797
+Idle Time: 0
+
+Three Tellers with Three Queues
+Simulation Time: 18.116
+Virtual Time: 169832
+Average Wait: 78627
+Max Wait: 159822
+Maximum Length of Line: 3141
+Idle Time: 1
+
+Three Tellers with One Queue
+Simulation Time: 87.6091
+Virtual Time: 503199
+Average Wait: 183611
+Max Wait: 493175
+Maximum Length of Line: 9797
+Idle Time: 0
+
+8 Teller with 8 Queue
+Simulation Time: 7.80363
+Virtual Time: 64292
+Average Wait: 26348
+Max Wait: 54209
+Maximum Length of Line: 1064
+Idle Time: 11
+

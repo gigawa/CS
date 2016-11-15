@@ -1,0 +1,112 @@
+\hypertarget{class_queue_interface}{}\subsection{Queue\+Interface$<$ Item\+Type $>$ Class Template Reference}
+\label{class_queue_interface}\index{Queue\+Interface$<$ Item\+Type $>$@{Queue\+Interface$<$ Item\+Type $>$}}
+Inheritance diagram for Queue\+Interface$<$ Item\+Type $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_queue_interface}
+\end{center}
+\end{figure}
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{class_queue_interface_adfc78ad2af130ad5f0867de0e9f63ec7}{is\+Empty} () const =0
+\item 
+virtual bool \hyperlink{class_queue_interface_af65d0ec8ce74a1c03ba83ba569cb7c14}{enqueue} (const Item\+Type \&new\+Entry)=0
+\item 
+virtual bool \hyperlink{class_queue_interface_a0d0d1b1a8b84bee0c3d8c4798a95e792}{dequeue} ()=0
+\item 
+virtual Item\+Type \hyperlink{class_queue_interface_a9a6097cc3742158736ef0908586e2066}{peek\+Front} () const =0
+\item 
+virtual \hyperlink{class_queue_interface_a35146beb6f3c60972ae75e1d0091e2eb}{$\sim$\+Queue\+Interface} ()
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Constructor \& Destructor Documentation}
+\index{Queue\+Interface@{Queue\+Interface}!````~Queue\+Interface@{$\sim$\+Queue\+Interface}}
+\index{````~Queue\+Interface@{$\sim$\+Queue\+Interface}!Queue\+Interface@{Queue\+Interface}}
+\paragraph[{\texorpdfstring{$\sim$\+Queue\+Interface()}{~QueueInterface()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ virtual {\bf Queue\+Interface}$<$ Item\+Type $>$\+::$\sim${\bf Queue\+Interface} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_queue_interface_a35146beb6f3c60972ae75e1d0091e2eb}{}\label{class_queue_interface_a35146beb6f3c60972ae75e1d0091e2eb}
+Destroys this queue and frees its memory. 
+
+\subsubsection{Member Function Documentation}
+\index{Queue\+Interface@{Queue\+Interface}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!Queue\+Interface@{Queue\+Interface}}
+\paragraph[{\texorpdfstring{dequeue()=0}{dequeue()=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ virtual bool {\bf Queue\+Interface}$<$ Item\+Type $>$\+::dequeue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_queue_interface_a0d0d1b1a8b84bee0c3d8c4798a95e792}{}\label{class_queue_interface_a0d0d1b1a8b84bee0c3d8c4798a95e792}
+Removes the front of this queue. \begin{DoxyPostcond}{Postcondition}
+If the operation was successful, the front of the queue has been removed. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+True if the removal is successful or false if not. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_linked_queue_a9058a9285a7f8ff6fd27b72347602162}{Linked\+Queue$<$ Item\+Type $>$}, and \hyperlink{class_array_queue_a13a06eec37f359d07a785f831e1f287c}{Array\+Queue$<$ Item\+Type $>$}.
+
+\index{Queue\+Interface@{Queue\+Interface}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!Queue\+Interface@{Queue\+Interface}}
+\paragraph[{\texorpdfstring{enqueue(const Item\+Type \&new\+Entry)=0}{enqueue(const ItemType &newEntry)=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ virtual bool {\bf Queue\+Interface}$<$ Item\+Type $>$\+::enqueue (
+\begin{DoxyParamCaption}
+\item[{const Item\+Type \&}]{new\+Entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_queue_interface_af65d0ec8ce74a1c03ba83ba569cb7c14}{}\label{class_queue_interface_af65d0ec8ce74a1c03ba83ba569cb7c14}
+Adds a new entry to the back of this queue. \begin{DoxyPostcond}{Postcondition}
+If the operation was successful, new\+Entry is at the back of the queue. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Entry} & The object to be added as a new entry. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the addition is successful or false if not. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_linked_queue_a3a46a8aa575cc665f83eae4610837998}{Linked\+Queue$<$ Item\+Type $>$}, and \hyperlink{class_array_queue_ae8942e3f72dbbfba821e8d7dabf9ec33}{Array\+Queue$<$ Item\+Type $>$}.
+
+\index{Queue\+Interface@{Queue\+Interface}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Queue\+Interface@{Queue\+Interface}}
+\paragraph[{\texorpdfstring{is\+Empty() const =0}{isEmpty() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ virtual bool {\bf Queue\+Interface}$<$ Item\+Type $>$\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_queue_interface_adfc78ad2af130ad5f0867de0e9f63ec7}{}\label{class_queue_interface_adfc78ad2af130ad5f0867de0e9f63ec7}
+Sees whether this queue is empty. \begin{DoxyReturn}{Returns}
+True if the queue is empty, or false if not. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_linked_queue_ab7c69e207152221746b0d9b089ad4690}{Linked\+Queue$<$ Item\+Type $>$}, and \hyperlink{class_array_queue_a9ecf3552d6b73c51f6b81277c6ba453d}{Array\+Queue$<$ Item\+Type $>$}.
+
+\index{Queue\+Interface@{Queue\+Interface}!peek\+Front@{peek\+Front}}
+\index{peek\+Front@{peek\+Front}!Queue\+Interface@{Queue\+Interface}}
+\paragraph[{\texorpdfstring{peek\+Front() const =0}{peekFront() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ virtual Item\+Type {\bf Queue\+Interface}$<$ Item\+Type $>$\+::peek\+Front (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_queue_interface_a9a6097cc3742158736ef0908586e2066}{}\label{class_queue_interface_a9a6097cc3742158736ef0908586e2066}
+Returns the front of this queue. \begin{DoxyPrecond}{Precondition}
+The queue is not empty. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The front of the queue has been returned, and the queue is unchanged. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+The front of the queue. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_linked_queue_a712f57ac62e93c0e13af4e0f18aa4fcd}{Linked\+Queue$<$ Item\+Type $>$}, and \hyperlink{class_array_queue_aba429775b7eedf84920bb00e78022d8a}{Array\+Queue$<$ Item\+Type $>$}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_queue_interface_8h}{Queue\+Interface.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,94 @@
+\hypertarget{class_sorted_list_is_a}{}\subsection{Sorted\+List\+IsA$<$ Item\+Type $>$ Class Template Reference}
+\label{class_sorted_list_is_a}\index{Sorted\+List\+Is\+A$<$ Item\+Type $>$@{Sorted\+List\+Is\+A$<$ Item\+Type $>$}}
+Inheritance diagram for Sorted\+List\+IsA$<$ Item\+Type $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_sorted_list_is_a}
+\end{center}
+\end{figure}
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Sorted\+List\+IsA} (const \hyperlink{class_sorted_list_is_a}{Sorted\+List\+IsA}$<$ Item\+Type $>$ \&s\+List)\hypertarget{class_sorted_list_is_a_aaec289770ce0896fc13634fc370a095e}{}\label{class_sorted_list_is_a_aaec289770ce0896fc13634fc370a095e}
+
+\item 
+bool {\bfseries insert\+Sorted} (const Item\+Type \&new\+Entry)\hypertarget{class_sorted_list_is_a_a2b9ddfb2a19090085495518681de9b3f}{}\label{class_sorted_list_is_a_a2b9ddfb2a19090085495518681de9b3f}
+
+\item 
+bool {\bfseries remove\+Sorted} (int position)\hypertarget{class_sorted_list_is_a_ad8b46e67b19a7188c75491b1ad4bc152}{}\label{class_sorted_list_is_a_ad8b46e67b19a7188c75491b1ad4bc152}
+
+\item 
+int {\bfseries get\+Position} (const Item\+Type \&an\+Entry) const \hypertarget{class_sorted_list_is_a_a0fb1533091f08f88a73cd40f460a20c7}{}\label{class_sorted_list_is_a_a0fb1533091f08f88a73cd40f460a20c7}
+
+\item 
+bool \hyperlink{class_sorted_list_is_a_aa80ef5215183e3a17f2a2f2e76d4fca3}{insert} (int new\+Position, const Item\+Type \&new\+Entry) override
+\item 
+void \hyperlink{class_sorted_list_is_a_ae85cca0f8a4a306d6d28cc5993e5895c}{replace} (int position, const Item\+Type \&new\+Entry) override  throw (\+Precond\+Violated\+Except)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Member Function Documentation}
+\index{Sorted\+List\+IsA@{Sorted\+List\+IsA}!insert@{insert}}
+\index{insert@{insert}!Sorted\+List\+IsA@{Sorted\+List\+IsA}}
+\paragraph[{\texorpdfstring{insert(int new\+Position, const Item\+Type \&new\+Entry) override}{insert(int newPosition, const ItemType &newEntry) override}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ bool {\bf Sorted\+List\+IsA}$<$ Item\+Type $>$\+::insert (
+\begin{DoxyParamCaption}
+\item[{int}]{new\+Position, }
+\item[{const Item\+Type \&}]{new\+Entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_sorted_list_is_a_aa80ef5215183e3a17f2a2f2e76d4fca3}{}\label{class_sorted_list_is_a_aa80ef5215183e3a17f2a2f2e76d4fca3}
+inserts an entry into the list at a given position \begin{DoxyPrecond}{Precondition}
+None. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+if the position is valid and insertion is possible a new entry is entered into the list. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Position} & the position in the list at which to insert the new entry. \\
+\hline
+{\em new\+Entry} & the new item to be placed in the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the item was successfully placed in the list. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_linked_list_ae8a19375505e87e2e4fc0e9b5afe4d4d}{Linked\+List$<$ Item\+Type $>$}.
+
+\index{Sorted\+List\+IsA@{Sorted\+List\+IsA}!replace@{replace}}
+\index{replace@{replace}!Sorted\+List\+IsA@{Sorted\+List\+IsA}}
+\paragraph[{\texorpdfstring{replace(int position, const Item\+Type \&new\+Entry) override}{replace(int position, const ItemType &newEntry) override}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ void {\bf Sorted\+List\+IsA}$<$ Item\+Type $>$\+::replace (
+\begin{DoxyParamCaption}
+\item[{int}]{position, }
+\item[{const Item\+Type \&}]{new\+Entry}
+\end{DoxyParamCaption}
+) throw  {\bf Precond\+Violated\+Except}) \hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_sorted_list_is_a_ae85cca0f8a4a306d6d28cc5993e5895c}{}\label{class_sorted_list_is_a_ae85cca0f8a4a306d6d28cc5993e5895c}
+Replaces the entry at the given position in this list. \begin{DoxyPrecond}{Precondition}
+1 $<$= position $<$= \hyperlink{class_linked_list_adae55d6b79235c816cb9e05027fd2e7a}{get\+Length()}. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The entry at the given position is new\+Entry. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The list position of the entry to replace. \\
+\hline
+{\em new\+Entry} & The replacement entry. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_precond_violated_except}{Precond\+Violated\+Except}} & if position $<$ 1 or position $>$ \hyperlink{class_linked_list_adae55d6b79235c816cb9e05027fd2e7a}{get\+Length()}. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented from \hyperlink{class_linked_list_a3035f880c50e7d8f68e67c093d4607ca}{Linked\+List$<$ Item\+Type $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_sorted_list_is_a_8h}{Sorted\+List\+Is\+A.\+h}\item 
+Sorted\+List\+Is\+A.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,100 @@
+\hypertarget{class_s_l___priority_queue}{}\subsection{S\+L\+\_\+\+Priority\+Queue$<$ Item\+Type $>$ Class Template Reference}
+\label{class_s_l___priority_queue}\index{S\+L\+\_\+\+Priority\+Queue$<$ Item\+Type $>$@{S\+L\+\_\+\+Priority\+Queue$<$ Item\+Type $>$}}
+Inheritance diagram for S\+L\+\_\+\+Priority\+Queue$<$ Item\+Type $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_s_l___priority_queue}
+\end{center}
+\end{figure}
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries S\+L\+\_\+\+Priority\+Queue} (const \hyperlink{class_s_l___priority_queue}{S\+L\+\_\+\+Priority\+Queue} \&pq)\hypertarget{class_s_l___priority_queue_a2630a64cbd7376864bcd4fac9c65991e}{}\label{class_s_l___priority_queue_a2630a64cbd7376864bcd4fac9c65991e}
+
+\item 
+bool \hyperlink{class_s_l___priority_queue_a4502c0091ed41cbedc3fb25040ae2833}{is\+Empty} () const 
+\item 
+bool \hyperlink{class_s_l___priority_queue_a23d14a8e92ba404f771eb5e99aee3c77}{enqueue} (const Item\+Type \&new\+Entry)
+\item 
+bool \hyperlink{class_s_l___priority_queue_ac9ec261fab4c5834c5e9d1aeb15833c7}{dequeue} ()
+\item 
+Item\+Type \hyperlink{class_s_l___priority_queue_ade728bc676a9f65ab8cf70b4f498afa3}{peek\+Front} () const   throw (\+Precond\+Violated\+Except)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Member Function Documentation}
+\index{S\+L\+\_\+\+Priority\+Queue@{S\+L\+\_\+\+Priority\+Queue}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!S\+L\+\_\+\+Priority\+Queue@{S\+L\+\_\+\+Priority\+Queue}}
+\paragraph[{\texorpdfstring{dequeue()}{dequeue()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ bool {\bf S\+L\+\_\+\+Priority\+Queue}$<$ Item\+Type $>$\+::dequeue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_s_l___priority_queue_ac9ec261fab4c5834c5e9d1aeb15833c7}{}\label{class_s_l___priority_queue_ac9ec261fab4c5834c5e9d1aeb15833c7}
+Removes the front of this queue. \begin{DoxyPostcond}{Postcondition}
+If the operation was successful, the front of the queue has been removed. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+True if the removal is successful or false if not. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_priority_queue_interface_abc4b28c8515af5b648c86e7a1af01ae9}{Priority\+Queue\+Interface$<$ Item\+Type $>$}.
+
+\index{S\+L\+\_\+\+Priority\+Queue@{S\+L\+\_\+\+Priority\+Queue}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!S\+L\+\_\+\+Priority\+Queue@{S\+L\+\_\+\+Priority\+Queue}}
+\paragraph[{\texorpdfstring{enqueue(const Item\+Type \&new\+Entry)}{enqueue(const ItemType &newEntry)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ bool {\bf S\+L\+\_\+\+Priority\+Queue}$<$ Item\+Type $>$\+::enqueue (
+\begin{DoxyParamCaption}
+\item[{const Item\+Type \&}]{new\+Entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_s_l___priority_queue_a23d14a8e92ba404f771eb5e99aee3c77}{}\label{class_s_l___priority_queue_a23d14a8e92ba404f771eb5e99aee3c77}
+Adds a new entry to the back of this queue. \begin{DoxyPostcond}{Postcondition}
+If the operation was successful, new\+Entry is at the back of the queue. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Entry} & The object to be added as a new entry. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the addition is successful or false if not. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_priority_queue_interface_ab45542786f10cf88ec8c7d05fba96124}{Priority\+Queue\+Interface$<$ Item\+Type $>$}.
+
+\index{S\+L\+\_\+\+Priority\+Queue@{S\+L\+\_\+\+Priority\+Queue}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!S\+L\+\_\+\+Priority\+Queue@{S\+L\+\_\+\+Priority\+Queue}}
+\paragraph[{\texorpdfstring{is\+Empty() const }{isEmpty() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ bool {\bf S\+L\+\_\+\+Priority\+Queue}$<$ Item\+Type $>$\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_s_l___priority_queue_a4502c0091ed41cbedc3fb25040ae2833}{}\label{class_s_l___priority_queue_a4502c0091ed41cbedc3fb25040ae2833}
+Sees whether this queue is empty. \begin{DoxyReturn}{Returns}
+True if the queue is empty, or false if not. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_priority_queue_interface_ad3f9d9c3dc7bc50ca9cbf3d4ec243608}{Priority\+Queue\+Interface$<$ Item\+Type $>$}.
+
+\index{S\+L\+\_\+\+Priority\+Queue@{S\+L\+\_\+\+Priority\+Queue}!peek\+Front@{peek\+Front}}
+\index{peek\+Front@{peek\+Front}!S\+L\+\_\+\+Priority\+Queue@{S\+L\+\_\+\+Priority\+Queue}}
+\paragraph[{\texorpdfstring{peek\+Front() const }{peekFront() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ Item\+Type {\bf S\+L\+\_\+\+Priority\+Queue}$<$ Item\+Type $>$\+::peek\+Front (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const throw  {\bf Precond\+Violated\+Except}) \hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_s_l___priority_queue_ade728bc676a9f65ab8cf70b4f498afa3}{}\label{class_s_l___priority_queue_ade728bc676a9f65ab8cf70b4f498afa3}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_precond_violated_except}{Precond\+Violated\+Except}} & if priority queue is empty. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{class_priority_queue_interface_aa0e45d144ef82101311ab83501dd403b}{Priority\+Queue\+Interface$<$ Item\+Type $>$}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_s_l___priority_queue_8h}{S\+L\+\_\+\+Priority\+Queue.\+h}\item 
+S\+L\+\_\+\+Priority\+Queue.\+cpp\end{DoxyCompactItemize}
