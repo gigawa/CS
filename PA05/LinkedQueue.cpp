@@ -13,12 +13,17 @@ LinkedQueue<ItemType>::LinkedQueue(const LinkedQueue& aQueue) {
 
 template<class ItemType>
 LinkedQueue<ItemType>::~LinkedQueue() {
-
+	Node<ItemType> * temp = frontPtr;
+	while(temp != NULL) {
+		frontPtr = frontPtr->getNext();
+		delete temp;
+		temp = frontPtr;
+	}
 }
 
 template<class ItemType>
 bool LinkedQueue<ItemType>::isEmpty() const {
-	if(frontPtr != backPtr) {
+	if(frontPtr != NULL) {
 		return false;
 	}else {
 		return true;
@@ -30,7 +35,7 @@ ItemType LinkedQueue<ItemType>::peekFront() const throw(PrecondViolatedExcept) {
 	if (isEmpty())
 		throw PrecondViolatedExcept("peekFront() called with empty queue");
 
-	return frontPtr->item;
+	return frontPtr->getItem();
 }
 
 //  Created by Frank M. Carrano and Timothy M. Henry.
@@ -47,8 +52,8 @@ bool LinkedQueue<ItemType>::dequeue()
       if (frontPtr == backPtr)
       {  // Special case: one node in queue
          // Set frontPtr and backPtr to nullptr
-         frontPtr.reset();
-         backPtr.reset();
+         frontPtr = NULL;
+         backPtr = NULL;
       }
       else
          frontPtr = frontPtr->getNext();
@@ -69,7 +74,7 @@ bool LinkedQueue<ItemType>::dequeue()
 template<class ItemType>
 bool LinkedQueue<ItemType>::enqueue(const ItemType& newEntry)
 {
-   auto newNodePtr = std::make_shared<Node<ItemType>>(newEntry);
+   auto newNodePtr = new Node<ItemType>(newEntry);
    
    // Insert the new node
    if (isEmpty())

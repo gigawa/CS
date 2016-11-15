@@ -19,8 +19,8 @@ private:
    // The queue is implemented as a chain of linked nodes that has
    // two external pointers, a head pointer for the front of the queue
    // and a tail pointer for the back of the queue.
-   std::shared_ptr<Node<ItemType>> frontPtr;
-   std::shared_ptr<Node<ItemType>> backPtr;
+   Node<ItemType> * frontPtr;
+   Node<ItemType> * backPtr;
 public:
    LinkedQueue();
    LinkedQueue(const LinkedQueue& aQueue);

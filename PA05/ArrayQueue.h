@@ -15,7 +15,7 @@ template<class ItemType>
 class ArrayQueue : public QueueInterface<ItemType>
 {
 private:
-   static const int DEFAULT_CAPACITY = 50;
+   static const int DEFAULT_CAPACITY = 100000;
    ItemType items[DEFAULT_CAPACITY]; // Array of queue items
    int      front;                   // Index to front of queue
    int      back;                    // Index to back of queue
