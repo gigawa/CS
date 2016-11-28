@@ -90,5 +90,9 @@ void BinaryNodeTree<ItemType>::
 
 template<class ItemType>
 bool BinaryNodeTree<ItemType>::isEmpty() const {
-
+	if(rootPtr == nullptr) {
+		return true;
+	}else {
+		return false;
+	}
 }

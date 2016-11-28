@@ -58,8 +58,6 @@ public:
    // Constructor and Destructor Section.
    //------------------------------------------------------------
    BinarySearchTree();
-   BinarySearchTree(const ItemType& rootItem);
-   BinarySearchTree(const BinarySearchTree<ItemType>& tree);
    virtual ~BinarySearchTree();
    
    //------------------------------------------------------------
