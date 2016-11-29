@@ -17,15 +17,16 @@ void BinarySearchTree<ItemType>::placeNode(std::shared_ptr<BinaryNode<ItemType>>
 	if(subTreePtr == nullptr) {
 		return newNodePtr;
 	} else if(subTreePtr->getItem() > newNodePtr->getItem()) {
-		tempPtr = placeNode(subTreePtr->getLeftChildPtr(), newNodePtr);
+		std::shared_ptr<BinaryNode<ItemType>> tempPtr = placeNode(subTreePtr->getLeftChildPtr(), newNodePtr);
 		subTreePtr->setLeftChildPtr(tempPtr);
 	} else {
-		tempPtr = placeNode(subTreePtr->getRightChildPtr(), newNodePtr);
+		std::shared_ptr<BinaryNode<ItemType>> tempPtr = placeNode(subTreePtr->getRightChildPtr(), newNodePtr);
 		subTreePtr->setRightChildPtr(tempPtr);
 	}
 	return subTreePtr;
 }
 
+template<class ItemType>
 auto BinarySearchTree<ItemType>::findNode(std::shared_ptr<BinaryNode<ItemType>> treePtr,
                  const ItemType& target) const {
 	if(treePtr == nullptr) {
@@ -39,7 +40,8 @@ auto BinarySearchTree<ItemType>::findNode(std::shared_ptr<BinaryNode<ItemType>> 
 	}
 }
 
-ItemType getEntry(const ItemType& anEntry) const throw(NotFoundException) {
+template<class ItemType>
+ItemType BinarySearchTree<ItemType>::getEntry(const ItemType& anEntry) const throw(NotFoundException) {
 	if(findNode(rootPtr, anEntry) == nullptr) {
 		std::string message = "Item Not Found";
       		throw(NotFoundException(message));
@@ -48,4 +50,60 @@ ItemType getEntry(const ItemType& anEntry) const throw(NotFoundException) {
 	}
 }
 
+template<class ItemType>
+auto BinarySearchTree<ItemType>::removeValue(std::shared_ptr<BinaryNode<ItemType>> subTreePtr,
+                    const ItemType target,
+                    bool& isSuccessful) override {
+	if(subTreePtr == nullptr) {
+		isSuccessful = false;
+	} else if(subTreePtr->getItem() == target) {
+		subTreePtr = removeNode(subTreePtr)
+		isSuccessful = true;
+	}else if(subTreePtr->getItem > target) {
+		std::shared_ptr<BinaryNode<ItemType>> tempPtr = removeValue(subTreePtr->getLeftChildPtr(), target, isSuccessful);
+		subTreePtr->setLeftChildPtr(tempPtr);
+	}else {
+		std::shared_ptr<BinaryNode<ItemType>> tempPtr = removeValue(subTreePtr->getRightChildPtr(), target, isSuccessful);
+		subTreePtr->setRightChildPtr(tempPtr);
+	}
+}
 
+template<class ItemType>
+auto BinarySearchTree<ItemType>::removeNode(std::shared_ptr<BinaryNode<ItemType>> nodePtr) {
+	if(nodePtr->isLeaf()) {
+		return nodePtr;
+	}else if(nodePtr->getLeftChildPtr == nullptr || nodePtr->getRightChildPtr == nullptr) {
+		std::shared_ptr<BinaryNode<ItemType>> nodeToConnectPtr;
+		if(nodePtr->getLeftChildPtr == nullptr) {
+			nodeToConnectPtr = nodePtr->getRightChildPtr;
+		}else {
+			nodeToConnectPtr = nodePtr->getLeftChildPtr;
+		}
+		return nodeToConnectPtr;
+	}else {
+		ItemType newNodeValue;
+		std::shared_ptr<BinaryNode<ItemType>> tempPtr = removeLeftMostNode(nodePtr->getRightChildPtr(), newNodeValue)
+		nodePtr->setRightChildPtr(tempPtr);
+		nodePtr->setItem(newNodeValue);
+	}
+}
+
+template<class ItemType>
+auto BinarySearchTree<ItemType>::removeLeftmostNode(std::shared_ptr<BinaryNode<ItemType>>subTreePtr,
+                           ItemType& inorderSuccessor) {
+	if(nodePtr->getLeftChildPtr() == nullptr) {
+		inorderSuccessor = nodePtr->getItem();
+		return removeNode(nodePtr);
+	}else {
+		std::shared_ptr<BinaryNode<ItemType>> tempPtr = removeLeftMostNode(nodePtr->getLeftChildPtr(), inorderSuccessor);
+		nodePtr->setLeftChildPtr(tempPtr);
+		return nodePtr;
+	}
+}
+
+template<class ItemType>
+bool BinarySearchTree<ItemType>::remove(const ItemType& target) {
+	bool isSuccessful = false;
+	rootPtr = removeValue(rootPtr, target, isSuccessful);
+	return isSuccessful;
+}
