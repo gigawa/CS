@@ -29,14 +29,13 @@ protected:
    //------------------------------------------------------------
    // Places a given new node at its proper position in this binary
    // search tree.
-   auto placeNode(std::shared_ptr<BinaryNode<ItemType>> subTreePtr,
-                  std::shared_ptr<BinaryNode<ItemType>> newNode);
+   auto placeNode(std::shared_ptr<BinaryNode<ItemType>> subTreePtr, std::shared_ptr<BinaryNode<ItemType>> newNode);
    
    // Removes the given target value from the tree while maintaining a
    // binary search tree.
    auto removeValue(std::shared_ptr<BinaryNode<ItemType>> subTreePtr,
                     const ItemType target,
-                    bool& isSuccessful) override;
+                    bool& isSuccessful) ;
    
    // Removes a given node from a tree while maintaining a binary search tree.
    auto removeNode(std::shared_ptr<BinaryNode<ItemType>> nodePtr);
@@ -52,6 +51,14 @@ protected:
    // or nullptr if not found.
    auto findNode(std::shared_ptr<BinaryNode<ItemType>> treePtr,
                  const ItemType& target) const;
+
+   int getHeightHelper(std::shared_ptr<BinaryNode<ItemType>> subTreePtr) const;
+   int getNumberOfNodesHelper(std::shared_ptr<BinaryNode<ItemType>> subTreePtr) const;
+   void destroyTree(std::shared_ptr<BinaryNode<ItemType>> subTreePtr);
+
+   void preorder(void visit(ItemType&), std::shared_ptr<BinaryNode<ItemType>> treePtr) const;
+   void inorder(void visit(ItemType&), std::shared_ptr<BinaryNode<ItemType>> treePtr) const;
+   void postorder(void visit(ItemType&), std::shared_ptr<BinaryNode<ItemType>> treePtr) const;
    
 public:
    //------------------------------------------------------------
@@ -67,15 +74,11 @@ public:
    int getHeight() const;
    int getNumberOfNodes() const;
    
-   ItemType getRootData() const throw(PrecondViolatedExcept);
-   void setRootData(const ItemType& newData);
-   
    bool add(const ItemType& newEntry);
    bool remove(const ItemType& target);
    void clear();
    
    ItemType getEntry(const ItemType& anEntry) const throw(NotFoundException);
-   bool contains(const ItemType& anEntry) const;
    
    //------------------------------------------------------------
    // Public Traversals Section.

@@ -25,20 +25,6 @@ public:
     @return  The number of nodes in the binary tree. */
    virtual int getNumberOfNodes() const = 0;
    
-   /** Gets the data that is in the root of this binary tree.
-    @pre  The binary tree is not empty.
-    @post  The root's data has been returned, and the binary tree is unchanged.
-    @return  The data in the root of the binary tree. */
-   virtual ItemType getRootData() const = 0;
-   
-   /** Replaces the data in the root of this binary tree with the given data,
-    if the tree is not empty. However, if the tree is empty, inserts a new
-    root node containing the given data into the tree.
-    @pre  None.
-    @post  The data in the root of the binary tree is as given.
-    @param newData  The data for the root. */
-   virtual void setRootData(const ItemType& newData) = 0;
-   
    /** Adds the given data to this binary tree.
     @param newData  The data to add to the binary tree.
     @post  The binary tree contains the new data.
@@ -59,12 +45,6 @@ public:
     @param target  The data to locate.
     @return  The data in the binary tree that matches the given data.*/
    virtual ItemType getEntry(const ItemType& target) const = 0;
-   
-   /** Tests whether the specified data occurs in this binary tree.
-    @post  The binary tree is unchanged.
-    @param target  The data to find.
-    @return  True if data matching the target occurs in the tree, or false if not. */
-   virtual bool contains(const ItemType& target) const = 0;
    
    /** Traverses this binary tree in preorder (inorder, postorder) and
        calls the function visit once for each node.

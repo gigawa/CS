@@ -6,6 +6,11 @@ BinaryNodeTree<ItemType>::BinaryNodeTree() : rootPtr(nullptr)
 {
 }  // end default constructor
 
+template<class ItemType>
+BinaryNodeTree<ItemType>::~BinaryNodeTree()
+{
+}
+
 //  Created by Frank M. Carrano and Timothy M. Henry.
 //  Copyright (c) 2017 Pearson Education, Hoboken, New Jersey.
 
@@ -67,10 +72,12 @@ void BinaryNodeTree<ItemType>::
      inorder(void visit(ItemType&),
              std::shared_ptr<BinaryNode<ItemType>> treePtr) const
 {
-   if (treePtr != nullptr)
+   if (!isEmpty())
    {
+	std::cout << "Not Null" << endl;
       inorder(visit, treePtr->getLeftChildPtr());
       ItemType theItem = treePtr->getItem();
+	std::cout<<theItem;
       visit(theItem);
       inorder(visit, treePtr->getRightChildPtr());
    }  // end if
@@ -95,4 +102,29 @@ bool BinaryNodeTree<ItemType>::isEmpty() const {
 	}else {
 		return false;
 	}
+}
+
+template<class ItemType>
+int BinaryNodeTree<ItemType>::getHeight() const {
+	return getHeightHelper(rootPtr);
+}
+
+template<class ItemType>
+int BinaryNodeTree<ItemType>::getNumberOfNodes() const {
+	return getHeightHelper(rootPtr);
+}
+
+template<class ItemType>
+void BinaryNodeTree<ItemType>::inorderTraverse(void visit(ItemType&)) const {
+	inorder(visit, rootPtr);
+}
+
+template<class ItemType>
+void BinaryNodeTree<ItemType>::preorderTraverse(void visit(ItemType&)) const {
+	inorder(visit,rootPtr);
+}
+
+template<class ItemType>
+void BinaryNodeTree<ItemType>::postorderTraverse(void visit(ItemType&)) const {
+	inorder(visit,rootPtr);
 }

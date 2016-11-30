@@ -34,7 +34,7 @@ protected:
                     std::shared_ptr<BinaryNode<ItemType>> newNodePtr);
    
    // Removes the target value from the tree.
-   virtual auto removeValue(std::shared_ptr<BinaryNode<ItemType>> subTreePtr,
+   auto removeValue(std::shared_ptr<BinaryNode<ItemType>> subTreePtr,
                             const ItemType target, bool& isSuccessful);
    
    // Copies values up the tree to overwrite value in current node until
@@ -42,8 +42,8 @@ protected:
    auto moveValuesUpTree(std::shared_ptr<BinaryNode<ItemType>> subTreePtr);
    
    // Recursively searches for target value.
-   virtual auto findNode(std::shared_ptr<BinaryNode<ItemType>> treePtr,
-                         const ItemType& target, bool& isSuccessful) const;
+   //auto findNode(std::shared_ptr<BinaryNode<ItemType>> treePtr,
+                        //const ItemType& target, bool& isSuccessful) const;
    
    // Copies the tree rooted at treePtr and returns a pointer to the root of the copy.
   // auto copyTree(const std::shared_ptr<BinaryNode<ItemType>> oldTreeRootPtr) const;
@@ -70,15 +70,10 @@ public:
    int getHeight() const;
    int getNumberOfNodes() const;
    
-   ItemType getRootData() const throw(PrecondViolatedExcept);
-   void setRootData(const ItemType& newData);
-   
    bool add(const ItemType& newData); // Adds an item to the tree
-   bool remove(const ItemType& data); // Removes specified item from the tree
-   void clear();
+   //bool remove(const ItemType& data); // Removes specified item from the tree
    
-   ItemType getEntry(const ItemType& anEntry) const throw(NotFoundException);
-   bool contains(const ItemType& anEntry) const;
+   //ItemType getEntry(const ItemType& anEntry) const throw(NotFoundException);
    
    //------------------------------------------------------------
    // Public Traversals Section.

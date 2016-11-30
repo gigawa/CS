@@ -36,7 +36,7 @@ ItemType BinaryNode<ItemType>::getItem() const {
 
 template<class ItemType>
 bool BinaryNode<ItemType>::isLeaf() const {
-	if(leftChildPtr == NULL && rightChildPtr == NULL) {
+	if(leftChildPtr == nullptr && rightChildPtr == nullptr) {
 		return true;
 	}else {
 		return false;

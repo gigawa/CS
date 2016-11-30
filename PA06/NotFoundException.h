@@ -2,7 +2,7 @@
 //  Copyright (c) 2017 Pearson Education, Hoboken, New Jersey.
 
 /** Listing 7-5.
-    @file PrecondViolatedExcept.h */
+    @file NotFoundException.h */
 
 #ifndef NOT_FOUND_EXCEPTION_
 #define NOT_FOUND_EXCEPTION_
@@ -14,5 +14,6 @@ class NotFoundException : public std::logic_error
 {
 public:
    NotFoundException(const std::string& message = "");
-}; // end PrecondViolatedExcept
+}; // end NotFoundException
+#include "NotFoundException.cpp"
 #endif
