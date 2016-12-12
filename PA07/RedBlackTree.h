@@ -16,15 +16,16 @@ private:
 	int getHeightHelper(std::shared_ptr<RedBlackNode<ItemType>> subTreePtr) const;
 	void destroyTree(std::shared_ptr<RedBlackNode<ItemType>> subTreePtr);
 
-	void leftRotate(std::shared_ptr<RedBlackNode<ItemType>> root, std::shared_ptr<RedBlackNode<ItemType>> x);
-	void rightRotate(std::shared_ptr<RedBlackNode<ItemType>> root, std::shared_ptr<RedBlackNode<ItemType>> y);
-	void treeInsert(std::shared_ptr<RedBlackNode<ItemType>> root, std::shared_ptr<RedBlackNode<ItemType>> z);
-	void insert(std::shared_ptr<RedBlackNode<ItemType>> root, std::shared_ptr<RedBlackNode<ItemType>> x);
+	auto leftRotate(std::shared_ptr<RedBlackNode<ItemType>> root, std::shared_ptr<RedBlackNode<ItemType>> x);
+	auto rightRotate(std::shared_ptr<RedBlackNode<ItemType>> root, std::shared_ptr<RedBlackNode<ItemType>> y);
+	auto treeInsert(std::shared_ptr<RedBlackNode<ItemType>> root, std::shared_ptr<RedBlackNode<ItemType>> z);
+	auto insert(std::shared_ptr<RedBlackNode<ItemType>> root, std::shared_ptr<RedBlackNode<ItemType>> x);
 
 	void inorder(void visit(ItemType&), std::shared_ptr<RedBlackNode<ItemType>> treePtr) const;
    
 public:
-	void add(ItemType & item);
+	bool isEmpty();
+	void add(const ItemType & item);
 	int getHeight() const;
 	void inorderTraverse(void visit(ItemType&)) const;
 	void clear();

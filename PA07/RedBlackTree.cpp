@@ -1,9 +1,10 @@
 template<class ItemType>
-void RedBlackTree<ItemType>::leftRotate(std::shared_ptr<RedBlackNode<ItemType>> root, std::shared_ptr<RedBlackNode<ItemType>> x) {
-	auto y = x->getRightPtr();
-	x->getRightPtr() = y->getLeftPtr();
-	if(y->getLeftPtr() != nullptr) {
-		y->getLeftPtr()->setParentPtr(x);
+auto RedBlackTree<ItemType>::leftRotate(std::shared_ptr<RedBlackNode<ItemType>> root, std::shared_ptr<RedBlackNode<ItemType>> x) {
+	std::cout << "Rotate Left" << endl;	
+	auto y = x->getRightChildPtr();
+	x->getRightChildPtr() = y->getLeftChildPtr();
+	if(y->getLeftChildPtr() != nullptr) {
+		y->getLeftChildPtr()->setParentPtr(x);
 	}
 	y->setParentPtr(x->getParentPtr());
 	if(x->getParentPtr() == nullptr) {
@@ -15,14 +16,17 @@ void RedBlackTree<ItemType>::leftRotate(std::shared_ptr<RedBlackNode<ItemType>> 
 	}
 	y->setLeftChildPtr(x);
 	x->setParentPtr(y);
+
+	return root;
 }
 
 template<class ItemType>
-void RedBlackTree<ItemType>::rightRotate(std::shared_ptr<RedBlackNode<ItemType>> root, std::shared_ptr<RedBlackNode<ItemType>> y) {
-	auto x = y->getLeftPtr();
-	y->getLeftPtr() = x->getRightPtr();
-	if(x->getRightPtr() != nullptr) {
-		x->getRightPtr()->setParentPtr(y);
+auto RedBlackTree<ItemType>::rightRotate(std::shared_ptr<RedBlackNode<ItemType>> root, std::shared_ptr<RedBlackNode<ItemType>> y) {
+	std::cout << "Rotate Right" << endl;
+	auto x = y->getLeftChildPtr();
+	y->getLeftChildPtr() = x->getRightChildPtr();
+	if(x->getRightChildPtr() != nullptr) {
+		x->getRightChildPtr()->setParentPtr(y);
 	}
 	x->setParentPtr(y->getParentPtr());
 	if(y->getParentPtr() == nullptr) {
@@ -34,52 +38,76 @@ void RedBlackTree<ItemType>::rightRotate(std::shared_ptr<RedBlackNode<ItemType>>
 	}
 	x->setRightChildPtr(y);
 	y->setParentPtr(x);
+
+	return root;
 }
 
 template<class ItemType>
-void RedBlackTree<ItemType>::insert(std::shared_ptr<RedBlackNode<ItemType>> root, std::shared_ptr<RedBlackNode<ItemType>> x) {
-	treeInsert(root, x);
+bool RedBlackTree<ItemType>::isEmpty() {
+	if(rootPtr == nullptr) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+template<class ItemType>
+auto RedBlackTree<ItemType>::insert(std::shared_ptr<RedBlackNode<ItemType>> root, std::shared_ptr<RedBlackNode<ItemType>> x) {
+	root = treeInsert(root, x);
+	std::cout << "Start Insert" << endl;
+	std::cout << x->getItem() << endl;
 	x->setColor(RED);
-	while(x != nullptr && x->getParent()->getColor() == RED) {
-		if(x->getParent()->getParent()->getLeftChild() == x->getParent()->getParent()) {
-			auto y = x->getParent()->getParent()->getRightChild();
+	while(x != nullptr && x->getParentPtr() != nullptr && x->getParentPtr()->getColor() == RED) {
+		std::cout << "In While" << endl;
+		if(x->getParentPtr()->getParentPtr()->getLeftChildPtr() == x->getParentPtr()->getParentPtr()) {
+			std::cout << "IF" << endl;
+			auto y = x->getParentPtr()->getParentPtr()->getRightChildPtr();
 			if(y->getColor() == RED) {
+				std::cout << "Case 1" << endl;
 				y->setColor(BLACK);
-				x->getParent()->setColor(BLACK);
-				x->getParent()->getParent()->setColor(BLACK);
-				x = x->getParent()->getParent();
+				x->getParentPtr()->setColor(BLACK);
+				x->getParentPtr()->getParentPtr()->setColor(BLACK);
+				x = x->getParentPtr()->getParentPtr();
 			} else {
-				if(x->getParent()->getRightChild() == x) {
-					x = x->getParent();
-					leftRotate(root, x);
+				std::cout << "Case 2" << endl;
+				if(x->getParentPtr()->getRightChildPtr() == x) {
+					x = x->getParentPtr();
+					root = leftRotate(root, x);
 				}
-				x->getParent()->setColor(BLACK);
-				x->getParent()->getParent()->setColor(RED);
-				rightRotate(root, x->getParent()->getParent();
+				x->getParentPtr()->setColor(BLACK);
+				x->getParentPtr()->getParentPtr()->setColor(RED);
+				rightRotate(root, x->getParentPtr()->getParentPtr());
 			}
 		} else {
-			auto y = x->getParent()->getParent()->getLeftChild();
+			std::cout << "ELSE" << endl;
+			auto y = x->getParentPtr()->getParentPtr()->getLeftChildPtr();
+			std::cout << "got parent" << endl;
+			std::cout << y->getColor() << endl;
 			if(y->getColor() == RED) {
+				std::cout << "Case 3" << endl;
 				y->setColor(BLACK);
-				x->getParent()->setColor(BLACK);
-				x->getParent()->getParent()->setColor(BLACK);
-				x = x->getParent()->getParent();
+				x->getParentPtr()->setColor(BLACK);
+				x->getParentPtr()->getParentPtr()->setColor(BLACK);
+				x = x->getParentPtr()->getParentPtr();
 			} else {
-				if(x->getParent()->getLeftChild() == x) {
-					x = x->getParent();
-					rightRotate(root, x);
+				std::cout << "Case 4" << endl;
+				if(x->getParentPtr()->getLeftChildPtr() == x) {
+					x = x->getParentPtr();
+					root = rightRotate(root, x);
 				}
-				x->getParent()->setColor(BLACK);
-				x->getParent()->getParent()->setColor(RED);
-				leftRotate(root, x->getParent()->getParent();
+				x->getParentPtr()->setColor(BLACK);
+				x->getParentPtr()->getParentPtr()->setColor(RED);
+				leftRotate(root, x->getParentPtr()->getParentPtr());
 			}
 		}
 	}
+	std::cout << "end While" << endl;
 	root->setColor(BLACK);
+	return root;
 }
 
 template<class ItemType>
-void RedBlackTree<ItemType>::treeInsert(std::shared_ptr<RedBlackNode<ItemType>> root, std::shared_ptr<RedBlackNode<ItemType>> z) {
+auto RedBlackTree<ItemType>::treeInsert(std::shared_ptr<RedBlackNode<ItemType>> root, std::shared_ptr<RedBlackNode<ItemType>> z) {
 	auto y = root;
 	auto x = root;
 
@@ -91,20 +119,21 @@ void RedBlackTree<ItemType>::treeInsert(std::shared_ptr<RedBlackNode<ItemType>> 
 			x = x->getRightChildPtr();
 		}
 	}
-	z->setParent(y);
+	z->setParentPtr(y);
 	if(y == nullptr) {
 		root = z;
-	}else {
+	}else if(z->getItem() < y->getItem()){
 		y->setLeftChildPtr(z);
 	} else {
 		y->setRightChildPtr(z);
 	}
+	return root;
 }
 
 template<class ItemType>
-void RedBlackTree<ItemType>::add(ItemType & item) {
+void RedBlackTree<ItemType>::add(const ItemType & item) {
 	auto newNode = std::make_shared<RedBlackNode<ItemType>>(item);
-	insert(rootPtr, newNode);
+	rootPtr = insert(rootPtr, newNode);
 }
 
 template<class ItemType>
@@ -137,10 +166,8 @@ void RedBlackTree<ItemType>::
 {
    if (!isEmpty())
    {
-	std::cout << "Not Null" << endl;
       inorder(visit, treePtr->getLeftChildPtr());
       ItemType theItem = treePtr->getItem();
-	std::cout<<theItem;
       visit(theItem);
       inorder(visit, treePtr->getRightChildPtr());
    }  // end if

@@ -4,12 +4,19 @@ using namespace std;
 
 template<class ItemType>
 RedBlackNode<ItemType>::RedBlackNode() {
-
+	parentPtr = nullptr;
+	leftChildPtr = nullptr;
+	rightChildPtr = nullptr;
+	color = BLACK;
 }
 
 template<class ItemType>
-RedBlackNode<ItemType>::RedBlackNode(ItemType anItem) {
+RedBlackNode<ItemType>::RedBlackNode(const ItemType& anItem) {
 	item = anItem;
+	parentPtr = nullptr;
+	leftChildPtr = nullptr;
+	rightChildPtr = nullptr;
+	color = BLACK;
 }
 
 template<class ItemType>
@@ -77,7 +84,7 @@ auto RedBlackNode<ItemType>::getRightChildPtr() const {
 }
 
 template<class ItemType>
-void RedBlackNode<ItemType>::setLeftChildPtr(std::shared_ptr<RedBlackNode<ItemType>> parent) {
+void RedBlackNode<ItemType>::setParentPtr(std::shared_ptr<RedBlackNode<ItemType>> parent) {
 	parentPtr = parent;
 }
 

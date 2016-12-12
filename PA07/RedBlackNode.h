@@ -17,14 +17,14 @@ class RedBlackNode
 {
 private:
 	ItemType                              item;          // Data portion
-	td::shared_ptr<RedBlackNode<ItemType>> parentPtr;  // Pointer to parent
+	std::shared_ptr<RedBlackNode<ItemType>> parentPtr;  // Pointer to parent
    	std::shared_ptr<RedBlackNode<ItemType>> leftChildPtr;  // Pointer to left child
    	std::shared_ptr<RedBlackNode<ItemType>> rightChildPtr; // Pointer to right child
 	Color color;
    
 public:
 	RedBlackNode();
-	RedBlackNode(ItemType & anItem);
+	RedBlackNode(const ItemType& anItem);
 
 	void setItem(const ItemType& anItem);
    	ItemType getItem() const;
