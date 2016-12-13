@@ -13,14 +13,15 @@ ofstream fout;
 
 int main() {
 	srand(time(NULL));
-	int * numberList = new int[100];
 
-	for(int i = 0; i < 5; i++) {
+	for(int i = 0; i < 1000; i++) {
 		cout << "Add" << endl;
 		int j = rand() % 200;
 		tree.add(j);
-		cout << "Tree height: " << tree.getHeight() << endl;
-		numberList[i] = j;
+		cout << "Tree height: ";
+		cout << tree.getHeight() << endl;
+		tree.inorderTraverse(addAll);
+		cout << endl;
 	}
 
 	cout << "Tree height: " << tree.getHeight() << endl;
@@ -30,5 +31,5 @@ int main() {
 }
 
 void addAll(int & c) {
-	fout << c << ", ";
+	cout << c << ", ";
 }
