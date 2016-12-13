@@ -8,28 +8,29 @@ using namespace std;
 void addAll(int & c);
 
 RedBlackTree<int> tree;
+long int total = 0;
 
 ofstream fout;
 
 int main() {
+	fout.open("output.txt");
 	srand(time(NULL));
 
 	for(int i = 0; i < 1000; i++) {
-		cout << "Add" << endl;
-		int j = rand() % 200;
+		int j = rand() % 10000;
 		tree.add(j);
-		cout << "Tree height: ";
-		cout << tree.getHeight() << endl;
 		tree.inorderTraverse(addAll);
-		cout << endl;
 	}
 
-	cout << "Tree height: " << tree.getHeight() << endl;
-	cout << boolalpha << tree.isEmpty() << endl;
+	fout << "Tree height: " << tree.getHeight() << endl;
+	fout << "Sum of all Values: " << total << endl;
+	fout << "Tree is Empty: " << boolalpha << tree.isEmpty() << endl;
+	tree.clear();
+	fout << "Tree is Empty: " << boolalpha << tree.isEmpty() << endl;
 
 	return 0;
 }
 
 void addAll(int & c) {
-	cout << c << ", ";
+	total += c;
 }
