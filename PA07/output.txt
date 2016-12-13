@@ -1,0 +1,4 @@
+Tree height: 42
+Sum of all Values: 2413116634
+Tree is Empty: false
+Tree is Empty: true

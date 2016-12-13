@@ -1,0 +1,78 @@
+\hypertarget{class_red_black_tree}{}\subsection{Red\+Black\+Tree$<$ Item\+Type $>$ Class Template Reference}
+\label{class_red_black_tree}\index{Red\+Black\+Tree$<$ Item\+Type $>$@{Red\+Black\+Tree$<$ Item\+Type $>$}}
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_red_black_tree_a5c698fd4f86233c1a7d7dcde3f2a7030}{is\+Empty} ()
+\item 
+void \hyperlink{class_red_black_tree_aed1bcd40f1ac45639d444cf6f2b4fd5e}{add} (const Item\+Type \&item)
+\item 
+int \hyperlink{class_red_black_tree_aec7fe9b68dc51e8f1beb4438bab66d18}{get\+Height} () const 
+\item 
+void \hyperlink{class_red_black_tree_aecc69b0caf3b47805009527e78633379}{inorder\+Traverse} (void visit(Item\+Type \&)) const 
+\item 
+void \hyperlink{class_red_black_tree_a3c359138ca12b255645857a7eeb68ff4}{clear} ()
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Member Function Documentation}
+\index{Red\+Black\+Tree@{Red\+Black\+Tree}!add@{add}}
+\index{add@{add}!Red\+Black\+Tree@{Red\+Black\+Tree}}
+\paragraph[{\texorpdfstring{add(const Item\+Type \&item)}{add(const ItemType &item)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ void {\bf Red\+Black\+Tree}$<$ Item\+Type $>$\+::add (
+\begin{DoxyParamCaption}
+\item[{const Item\+Type \&}]{item}
+\end{DoxyParamCaption}
+)}\hypertarget{class_red_black_tree_aed1bcd40f1ac45639d444cf6f2b4fd5e}{}\label{class_red_black_tree_aed1bcd40f1ac45639d444cf6f2b4fd5e}
+Adds the given data to this binary tree. 
+\begin{DoxyParams}{Parameters}
+{\em new\+Data} & The data to add to the binary tree. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+The binary tree contains the new data. 
+\end{DoxyPostcond}
+\index{Red\+Black\+Tree@{Red\+Black\+Tree}!clear@{clear}}
+\index{clear@{clear}!Red\+Black\+Tree@{Red\+Black\+Tree}}
+\paragraph[{\texorpdfstring{clear()}{clear()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ void {\bf Red\+Black\+Tree}$<$ Item\+Type $>$\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_red_black_tree_a3c359138ca12b255645857a7eeb68ff4}{}\label{class_red_black_tree_a3c359138ca12b255645857a7eeb68ff4}
+Removes all data from this binary tree. \index{Red\+Black\+Tree@{Red\+Black\+Tree}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Red\+Black\+Tree@{Red\+Black\+Tree}}
+\paragraph[{\texorpdfstring{get\+Height() const }{getHeight() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ int {\bf Red\+Black\+Tree}$<$ Item\+Type $>$\+::get\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_red_black_tree_aec7fe9b68dc51e8f1beb4438bab66d18}{}\label{class_red_black_tree_aec7fe9b68dc51e8f1beb4438bab66d18}
+Gets the height of this binary tree. \begin{DoxyReturn}{Returns}
+The height of the binary tree. 
+\end{DoxyReturn}
+\index{Red\+Black\+Tree@{Red\+Black\+Tree}!inorder\+Traverse@{inorder\+Traverse}}
+\index{inorder\+Traverse@{inorder\+Traverse}!Red\+Black\+Tree@{Red\+Black\+Tree}}
+\paragraph[{\texorpdfstring{inorder\+Traverse(void visit(\+Item\+Type \&)) const }{inorderTraverse(void visit(ItemType &)) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ void {\bf Red\+Black\+Tree}$<$ Item\+Type $>$\+::inorder\+Traverse (
+\begin{DoxyParamCaption}
+\item[{void }]{visitItem\+Type \&}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_red_black_tree_aecc69b0caf3b47805009527e78633379}{}\label{class_red_black_tree_aecc69b0caf3b47805009527e78633379}
+Traverses this binary tree in inorder and calls the function visit once for each node. 
+\begin{DoxyParams}{Parameters}
+{\em visit} & A client-\/defined function that performs an operation on either each visited node or its data. \\
+\hline
+\end{DoxyParams}
+\index{Red\+Black\+Tree@{Red\+Black\+Tree}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Red\+Black\+Tree@{Red\+Black\+Tree}}
+\paragraph[{\texorpdfstring{is\+Empty()}{isEmpty()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Item\+Type $>$ bool {\bf Red\+Black\+Tree}$<$ Item\+Type $>$\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_red_black_tree_a5c698fd4f86233c1a7d7dcde3f2a7030}{}\label{class_red_black_tree_a5c698fd4f86233c1a7d7dcde3f2a7030}
+Tests whether this binary tree is empty. \begin{DoxyReturn}{Returns}
+True if the binary tree is empty, or false if not. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_red_black_tree_8h}{Red\+Black\+Tree.\+h}\item 
+Red\+Black\+Tree.\+cpp\end{DoxyCompactItemize}

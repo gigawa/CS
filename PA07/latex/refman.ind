@@ -1,0 +1,41 @@
+\begin{theindex}
+
+  \item {add}
+    \subitem {Red\+Black\+Tree}, \hyperpage{3}
+
+  \indexspace
+
+  \item {Binary\+Node$<$ Item\+Type $>$}, \hyperpage{2}
+  \item {Binary\+Node.\+h}, \hyperpage{4}
+
+  \indexspace
+
+  \item {clear}
+    \subitem {Red\+Black\+Tree}, \hyperpage{3}
+
+  \indexspace
+
+  \item {get\+Height}
+    \subitem {Red\+Black\+Tree}, \hyperpage{3}
+
+  \indexspace
+
+  \item {inorder\+Traverse}
+    \subitem {Red\+Black\+Tree}, \hyperpage{3}
+  \item {is\+Empty}
+    \subitem {Red\+Black\+Tree}, \hyperpage{3}
+
+  \indexspace
+
+  \item {Red\+Black\+Node$<$ Item\+Type $>$}, \hyperpage{2}
+  \item {Red\+Black\+Node.\+h}, \hyperpage{4}
+  \item {Red\+Black\+Tree}
+    \subitem {add}, \hyperpage{3}
+    \subitem {clear}, \hyperpage{3}
+    \subitem {get\+Height}, \hyperpage{3}
+    \subitem {inorder\+Traverse}, \hyperpage{3}
+    \subitem {is\+Empty}, \hyperpage{3}
+  \item {Red\+Black\+Tree$<$ Item\+Type $>$}, \hyperpage{3}
+  \item {Red\+Black\+Tree.\+h}, \hyperpage{5}
+
+\end{theindex}
